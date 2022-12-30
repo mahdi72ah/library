@@ -8,6 +8,9 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { ToolbarComponent } from './shared/toolbar/toolbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {SidebarService} from "./shared/sidebar/shared/services/sidebar.service";
+import {LibraryInterceptor} from "./utilities/libraryInterceptor";
 
 
 @NgModule({
@@ -22,9 +25,17 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TableModule
+    TableModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    SidebarService,
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass: LibraryInterceptor,
+      multi:true
+    }
+  ],
   exports: [
     ToolbarComponent
   ],
