@@ -1,4 +1,6 @@
 export interface SidebarInterFace{
   title:string,
-  menu_id?:number
+  menu_id?:number,
+  child?:SidebarInterFace[],
+  id:number
 }

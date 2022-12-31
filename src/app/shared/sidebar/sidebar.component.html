@@ -306,7 +306,8 @@
         </div>
         <!--end:Menu item-->
         <!--begin:Menu item-->
-        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+
+        <div *ngFor="let item of sidbarData" data-kt-menu-trigger="click" class="menu-item menu-accordion">
           <!--begin:Menu link-->
           <span class="menu-link">
 											<span class="menu-icon">
@@ -319,80 +320,20 @@
 												</span>
                         <!--end::Svg Icon-->
 											</span>
-											<span class="menu-title">کاربر پروفایل</span>
+											<span class="menu-title">{{item.title}}</span>
 											<span class="menu-arrow"></span>
 										</span>
           <!--end:Menu link-->
           <!--begin:Menu sub-->
-          <div class="menu-sub menu-sub-accordion">
+          <div *ngIf="item.child" class="menu-sub menu-sub-accordion">
             <!--begin:Menu item-->
-            <div class="menu-item">
+            <div *ngFor="let itemChild of item.child" class="menu-item">
               <!--begin:Menu link-->
               <a class="menu-link" href="../../demo1/dist/pages/user-profile/overview.html">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
-                <span class="menu-title">بررسی اجمالی</span>
-              </a>
-              <!--end:Menu link-->
-            </div>
-            <!--end:Menu item-->
-            <!--begin:Menu item-->
-            <div class="menu-item">
-              <!--begin:Menu link-->
-              <a class="menu-link" href="../../demo1/dist/pages/user-profile/projects.html">
-													<span class="menu-bullet">
-														<span class="bullet bullet-dot"></span>
-													</span>
-                <span class="menu-title">پروژه ها</span>
-              </a>
-              <!--end:Menu link-->
-            </div>
-            <!--end:Menu item-->
-            <!--begin:Menu item-->
-            <div class="menu-item">
-              <!--begin:Menu link-->
-              <a class="menu-link" href="../../demo1/dist/pages/user-profile/campaigns.html">
-													<span class="menu-bullet">
-														<span class="bullet bullet-dot"></span>
-													</span>
-                <span class="menu-title">کمپین ها</span>
-              </a>
-              <!--end:Menu link-->
-            </div>
-            <!--end:Menu item-->
-            <!--begin:Menu item-->
-            <div class="menu-item">
-              <!--begin:Menu link-->
-              <a class="menu-link" href="../../demo1/dist/pages/user-profile/documents.html">
-													<span class="menu-bullet">
-														<span class="bullet bullet-dot"></span>
-													</span>
-                <span class="menu-title">اسناد</span>
-              </a>
-              <!--end:Menu link-->
-            </div>
-            <!--end:Menu item-->
-            <!--begin:Menu item-->
-            <div class="menu-item">
-              <!--begin:Menu link-->
-              <a class="menu-link" href="../../demo1/dist/pages/user-profile/followers.html">
-													<span class="menu-bullet">
-														<span class="bullet bullet-dot"></span>
-													</span>
-                <span class="menu-title">فالوورها</span>
-              </a>
-              <!--end:Menu link-->
-            </div>
-            <!--end:Menu item-->
-            <!--begin:Menu item-->
-            <div class="menu-item">
-              <!--begin:Menu link-->
-              <a class="menu-link" href="../../demo1/dist/pages/user-profile/activity.html">
-													<span class="menu-bullet">
-														<span class="bullet bullet-dot"></span>
-													</span>
-                <span class="menu-title">فعالیت</span>
+                <span class="menu-title">{{itemChild.title}}</span>
               </a>
               <!--end:Menu link-->
             </div>

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {SidebarService} from "./shared/services/sidebar.service";
+import {SidebarInterFace} from "./shared/interFaces/sidebarInterFace";
 
 
 @Component({
@@ -9,12 +10,15 @@ import {SidebarService} from "./shared/services/sidebar.service";
 })
 export class SidebarComponent implements OnInit{
 
+  sidbarData:SidebarInterFace[]=[];
+
   constructor(private sidebarService:SidebarService) {
   }
 
   ngOnInit(): void {
     this.sidebarService.getAllMenuItem().subscribe(res=>{
       console.log('Vahid =>',res);
+      this.sidbarData=res;
     })
   }
 
