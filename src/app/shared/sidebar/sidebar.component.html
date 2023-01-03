@@ -334,8 +334,42 @@
 														<span class="bullet bullet-dot"></span>
 													</span>
                 <span class="menu-title">{{itemChild.title}}</span>
+                <div *ngIf="itemChild.child">
+                  <span  *ngIf="itemChild.child.length>0" _ngcontent-cmv-c19="" class="menu-arrow"></span>
+                </div>
+
               </a>
               <!--end:Menu link-->
+
+
+
+
+
+              <!--begin:Menu sub-->
+              <div *ngIf="itemChild.child" class="menu-sub menu-sub-accordion">
+                <!--begin:Menu item-->
+                <div *ngFor="let itemChildChild of itemChild.child" class="menu-item">
+                  <!--begin:Menu link-->
+                  <a class="menu-link" href="../../demo1/dist/pages/user-profile/overview.html">
+													<span class="menu-bullet">
+														<span class="bullet bullet-dot"></span>
+													</span>
+                    <span class="menu-title">{{itemChildChild.title}}</span>
+                  </a>
+                  <!--end:Menu link-->
+                </div>
+                <!--end:Menu item-->
+              </div>
+              <!--end:Menu sub-->
+
+
+
+
+
+
+
+
+
             </div>
             <!--end:Menu item-->
           </div>
