@@ -1,0 +1,43 @@
+<!--begin::Header-->
+<div id="kt_app_header" >
+  <!--begin::Header container-->
+  <div class="app-container container-fluid d-flex align-items-stretch" id="kt_app_header_container">
+
+
+
+
+    <!--begin::کاربر menu-->
+    <div  class="app-navbar-item ms-1 ms-md-3 mt-3">
+      <!--begin::Menu wrapper-->
+      <app-child-table [accounting]="account" (toParentAccounting)="parentAccounting($event)"></app-child-table>
+      <!--end::Menu wrapper-->
+    </div>
+    <!--end::کاربر menu-->
+
+
+    <!--begin::کاربر menu-->
+    <div class="app-navbar-item ms-1 ms-md-3 mt-3">
+      <!--begin::Menu wrapper-->
+      <app-tafsil-table  [childAccounting]="childAccount" (toChildAccounting)="childAccounting($event)"></app-tafsil-table>
+      <!--end::Menu wrapper-->
+    </div>
+    <!--end::کاربر menu-->
+
+
+
+
+    <!--begin::کاربر menu-->
+    <div class="app-navbar-item ms-1 ms-md-3 mt-3">
+      <!--begin::Menu wrapper-->
+      <app-code-table  [codeAccounting]="codeAccount" (toCodeAccounting)="codeAccounting($event)"></app-code-table>
+      <!--end::Menu wrapper-->
+    </div>
+    <!--end::کاربر menu-->
+
+
+
+
+  </div>
+  <!--end::Header container-->
+</div>
+<!--end::Header-->
