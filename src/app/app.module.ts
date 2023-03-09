@@ -15,6 +15,8 @@ import {FormsModule} from "@angular/forms";
 import { TafsilTableComponent } from './table/tafsil-table/tafsil-table.component';
 import {TableComponent} from "./table/table/table.component";
 import { CodeTableComponent } from './table/code-table/code-table.component';
+import { TreeViewComponent } from './tree-view/tree-view.component';
+import {TreeModule} from "primeng/tree";
 
 
 @NgModule({
@@ -28,14 +30,17 @@ import { CodeTableComponent } from './table/code-table/code-table.component';
     TableComponent,
     ChildTableComponent,
     TafsilTableComponent,
-    CodeTableComponent
+    CodeTableComponent,
+    TreeViewComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        FormsModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    HttpClientModule,
+    TreeModule
+  ],
   providers: [
     SidebarService,
     {
