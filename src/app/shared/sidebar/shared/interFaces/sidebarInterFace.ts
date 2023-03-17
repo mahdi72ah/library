@@ -1,6 +1,8 @@
-export interface SidebarInterFace{
-  title:string,
-  menu_id?:number,
-  child?:SidebarInterFace[],
-  id:number
+export interface SidebarInterFace {
+  title: string,
+
+  icon: string,
+  menu_id?: number,
+  child?: SidebarInterFace[],
+  id: number
 }
