@@ -6,7 +6,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { ToolbarComponent } from './shared/toolbar/toolbar.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {SidebarService} from "./shared/sidebar/shared/services/sidebar.service";
 import {LibraryInterceptor} from "./utilities/libraryInterceptor";
@@ -26,7 +26,6 @@ import {TreeModule} from "primeng/tree";
     SidebarComponent,
     FooterComponent,
     ToolbarComponent,
-    DashboardComponent,
     TableComponent,
     ChildTableComponent,
     TafsilTableComponent,
