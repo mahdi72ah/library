@@ -1,0 +1,73 @@
+<!--begin::Content-->
+<div id="kt_app_content" class="app-content flex-column-fluid" >
+  <!--begin::Content container-->
+  <div id="kt_app_content_container" class="app-container container-xxl">
+    <!--begin::محصولات-->
+    <div class="card card-flush">
+      <!--begin::کارت body-->
+      <div class="card-body pt-0">
+        <!--begin::Table-->
+        <table class="table align-middle table-striped table-bordered table-hover fs-6 gy-5" id="kt_ecommerce_report_views_table">
+          <!--begin::Table head-->
+          <thead style="background-color: #d9edf7;">
+          <!--begin::Table row-->
+          <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+            <th class="min-w-50px">ردیف</th>
+            <th class="min-w-150px">مرحله درخواست</th>
+            <th class="text-end min-w-100px">تعداد کل</th>
+            <th class="text-end min-w-100px">تعداد اخذ شده</th>
+            <th class="text-end min-w-100px">مشاهده</th>
+          </tr>
+          <!--end::Table row-->
+          </thead>
+          <!--end::Table head-->
+          <!--begin::Table body-->
+          <tbody class="fw-semibold text-gray-600">
+
+
+          <!--begin::Table row-->
+          <tr *ngFor="let item of Data">
+            <!--begin::محصولات=-->
+            <td>
+              <div style="text-align: center;margin-right: 10px;">
+                {{item.radif}}
+              </div>
+            </td>
+            <!--end::محصولات=-->
+            <!--begin::SKU=-->
+            <td class="text-end pe-0">
+              <span class="fw-bold">{{item.marhaleDarkhast}}</span>
+            </td>
+            <!--end::SKU=-->
+            <!--begin::rating-->
+            <td class="text-end pe-0" data-order="rating-4" data-filter="rating-4">
+              {{item.tedadKol}}
+            </td>
+            <!--end::rating-->
+            <!--begin::rating-->
+            <td class="text-end pe-0" data-order="rating-4" data-filter="rating-4">
+              {{item.tedadAkhzShode}}
+            </td>
+            <!--end::rating-->
+            <!--begin::قیمت=-->
+            <td class="text-end pe-0">
+              <a style="width: 90%;" class="btn btn-success  btn-sm btn-block">مشاهده</a>
+            </td>
+            <!--end::قیمت=-->
+          </tr>
+          <!--end::Table row-->
+
+
+          </tbody>
+          <!--end::Table body-->
+        </table>
+        <!--end::Table-->
+      </div>
+      <!--end::کارت body-->
+    </div>
+    <!--end::محصولات-->
+  </div>
+  <!--end::Content container-->
+</div>
+<!--end::Content-->
+
