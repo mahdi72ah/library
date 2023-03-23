@@ -1,0 +1,10 @@
+table th{
+  color: #333;
+  text-align: center !important;
+}
+table tr td{
+  border: 1px solid #ddd;
+  text-align: center !important;
+  padding: 5px;
+}
+

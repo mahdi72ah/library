@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import {DashboardComponent} from "./dashboard/dashboard.component";
@@ -11,16 +11,16 @@ import { ShowChildRowEtelaatDarkhasthaComponent } from './show-child-row-etelaat
 
 
 
+
 @NgModule({
   declarations: [
     DashboardComponent,
     AmarVaDarkhasthaComponent,
     EtelaatAmaryComponent,
     EtelaatDarkhasthaComponent,
-    ShowChildRowEtelaatDarkhasthaComponent,
+    ShowChildRowEtelaatDarkhasthaComponent
   ],
   imports: [
-    CommonModule,
     DashboardRoutingModule,
     ShareModule
   ]

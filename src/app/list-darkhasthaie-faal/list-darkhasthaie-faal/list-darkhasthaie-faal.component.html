@@ -1,10 +1,6 @@
 
 
 <div style="margin-top: 60px;">
-
-  <h3>اطلاعات درخواست‌ها</h3>
-
-
   <!--begin::Content-->
   <div id="kt_app_content" class="app-content flex-column-fluid">
     <!--begin::Content container-->
@@ -116,17 +112,24 @@
             <!--begin::Table head-->
             <thead style="background-color: #d9edf7;">
             <tr>
-              <th style="width: 100%;border-left-width: 1px;text-align: center;" colspan="5" rowspan="1">وضعیت کارتابل
-                شما
+              <th style="background-color: #67809f!important;width: 100%;border-left-width: 1px;text-align: right !important;padding-right: 15px;color: #fff;" colspan="12" rowspan="1">
+                لیست درخواست‌های فعال
               </th>
             </tr>
             <!--begin::Table row-->
             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-              <th class="min-w-150px">نوع درخواست</th>
-              <th class="text-end min-w-100px">تعداد کل</th>
-              <th class="text-end min-w-100px">تعداد اخذ شده</th>
-              <th class="text-end min-w-100px">مشاهده</th>
-              <th class="text-end min-w-70px">تفکیک مراحل</th>
+              <th style="width:74px;">شماره درخواست</th>
+              <th class="text-end min-w-100px">شهر</th>
+              <th class="text-end min-w-100px">نوع درخواست</th>
+              <th class="text-end min-w-100px">مرحله</th>
+              <th class="text-end min-w-70px">ایجادکننده</th>
+              <th class="text-end min-w-70px">ارجاع دهنده</th>
+              <th class="text-end min-w-70px">تاریخ ارجاع</th>
+              <th class="text-end min-w-70px">خوانده</th>
+              <th class="text-end min-w-70px">اخذ کننده</th>
+              <th class="text-end min-w-70px">توضیحات</th>
+              <th class="text-end" style="width: 150px;">مشاهده</th>
+              <th class="text-end min-w-70px">سابقه</th>
             </tr>
             <!--end::Table row-->
             </thead>
@@ -140,27 +143,78 @@
               <!--begin::محصولات=-->
               <td>
                 <div style="text-align: right;margin-right: 10px;">
-                  {{item.noeDarKhast}}
+                  {{item.shomareDarkhast}}
                 </div>
               </td>
               <!--end::محصولات=-->
               <!--begin::SKU=-->
               <td class="text-end pe-0">
-                <span class="fw-bold">{{item.tedadKol}}</span>
+                <span class="fw-bold">{{item.shahr}}</span>
               </td>
               <!--end::SKU=-->
               <!--begin::rating-->
               <td class="text-end pe-0" data-order="rating-4" data-filter="rating-4">
-                {{item.tedadAkhzShode}}
+                {{item.noeDarkhast}}
               </td>
               <!--end::rating-->
+
+
+              <!--begin::rating-->
+              <td class="text-end pe-0" data-order="rating-4" data-filter="rating-4">
+                {{item.marhale}}
+              </td>
+              <!--end::rating-->
+
+
+              <!--begin::rating-->
+              <td class="text-end pe-0" data-order="rating-4" data-filter="rating-4">
+                {{item.ijadKonande}}
+              </td>
+              <!--end::rating-->
+
+
+              <!--begin::rating-->
+              <td class="text-end pe-0" data-order="rating-4" data-filter="rating-4">
+                {{item.erjaDahande}}
+              </td>
+              <!--end::rating-->
+
+
+              <!--begin::rating-->
+              <td class="text-end pe-0" data-order="rating-4" data-filter="rating-4">
+                {{item.tarikhErja}}
+              </td>
+              <!--end::rating-->
+
+
+              <!--begin::rating-->
+              <td class="text-end pe-0" data-order="rating-4" data-filter="rating-4">
+                {{item.khande}}
+              </td>
+              <!--end::rating-->
+
+
+              <!--begin::rating-->
+              <td class="text-end pe-0" data-order="rating-4" data-filter="rating-4">
+                {{item.akhzKonande}}
+              </td>
+              <!--end::rating-->
+
+
+              <!--begin::rating-->
+              <td class="text-end pe-0" data-order="rating-4" data-filter="rating-4">
+                {{item.tozihat}}
+              </td>
+              <!--end::rating-->
+
+
               <!--begin::قیمت=-->
               <td class="text-end pe-0">
-                <a [routerLink]="['/listDarkhasthaieFaal/listGrad',item.id]" style="width: 90%;" class="btn btn-primary btn-sm btn-block">مشاهده</a>
+                <a  style="width: 90%;" class="btn btn-primary btn-sm btn-block">مشاهده</a>
               </td>
               <!--end::قیمت=-->
               <!--begin::نشان داد=-->
-              <td (click)="showChild(item.id,item.child)" class="text-end pe-0" data-bs-toggle="modal" data-bs-target="#kt_modal_view_users">
+              <td  class="text-end pe-0" data-bs-toggle="modal" data-bs-target="#kt_modal_view_users">
                 <svg style="cursor: pointer;" xmlns="http://www.w3.org/2000/svg" width="24"
                      height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                      stroke-linecap="round" stroke-linejoin="round" class="feather feather-align-justify">
@@ -191,46 +245,5 @@
 
 
 
-<!--begin::Modal - نمایش users-->
-<div class="modal fade" id="kt_modal_view_users" tabindex="-1" aria-hidden="true">
-  <!--begin::Modal dialog-->
-  <div class="modal-dialog" style="top: 14%;left: 21%;">
-    <!--begin::Modal content-->
-    <div class="modal-content" style="width: 1200px;">
-      <!--begin::Modal header-->
-      <div class="modal-header pb-0 border-0 justify-content-end">
-        <!--begin::Close-->
-        <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
-          <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
-          <span class="svg-icon svg-icon-1">
-								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
-									<rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
-								</svg>
-							</span>
-          <!--end::Svg Icon-->
-        </div>
-        <!--end::Close-->
-      </div>
-      <!--begin::Modal header-->
-      <!--begin::Modal body-->
-      <div class="modal-body">
-        <!--begin::Heading-->
-        <div class="text-center">
-          <!--begin::توضیحات-->
-          <div class="text-muted fw-semibold fs-5 mb-2">جزئیات تفکیک مراحل</div>
-          <!--end::توضیحات-->
-        </div>
-        <!--end::Heading-->
-        <!--begin::users-->
-        <app-show-child-row-etelaat-darkhastha [Data]="itemChild"></app-show-child-row-etelaat-darkhastha>
-        <!--end::users-->
-      </div>
-      <!--end::Modal body-->
-    </div>
-    <!--end::Modal content-->
-  </div>
-  <!--end::Modal dialog-->
-</div>
-<!--end::Modal - نمایش users-->
+
 

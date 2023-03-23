@@ -13,6 +13,9 @@ import {TableComponent} from "./table/table/table.component";
 import { CodeTableComponent } from './table/code-table/code-table.component';
 import { TreeViewComponent } from './tree-view/tree-view.component';
 import {ShareModule} from "./shared/share/share.module";
+import {AppRoutingModule} from "./app-routing.module";
+import {BrowserModule} from "@angular/platform-browser";
+
 
 
 @NgModule({
@@ -28,7 +31,9 @@ import {ShareModule} from "./shared/share/share.module";
     TreeViewComponent
   ],
   imports: [
-    ShareModule
+    ShareModule,
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [
     SidebarService,
