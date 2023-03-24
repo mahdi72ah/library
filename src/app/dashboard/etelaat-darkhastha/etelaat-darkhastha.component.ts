@@ -30,7 +30,7 @@ export class EtelaatDarkhasthaComponent implements OnInit, OnDestroy {
 
     this.dtOptions = {
       pagingType: 'full_numbers',
-      pageLength: 2,
+      pageLength: 10,
       ordering: true,
       language: LanguageApp.persian_datatables
     };
