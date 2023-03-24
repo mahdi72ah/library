@@ -5,6 +5,7 @@ import {BrowserModule} from "@angular/platform-browser";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import {TreeModule} from "primeng/tree";
+import {DataTablesModule} from "angular-datatables";
 
 
 
@@ -17,6 +18,7 @@ import {TreeModule} from "primeng/tree";
     CommonModule,
     FormsModule,
     TreeModule,
+    DataTablesModule
   ],
   exports:[
     ToolbarComponent,
@@ -24,6 +26,7 @@ import {TreeModule} from "primeng/tree";
     HttpClientModule,
     FormsModule,
     TreeModule,
+    DataTablesModule
   ]
 })
 export class ShareModule { }
