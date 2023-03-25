@@ -1,0 +1,43 @@
+.h3{
+  float: right;
+  font-size: 18px;
+  font-weight: 700!important;
+  margin-top: 20px;
+  padding-right: 10px;
+  width: 100%;
+  color: #e87e04!important;
+}
+.container-fluid{
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.form-group{
+  margin-bottom: 15px;
+  min-height: 20px;
+  float: right;
+}
+.form-group div{
+  float: right;
+}
+.form-group label{
+  float: right;
+}
+.btn-default {
+  background-color: #fff;
+  border-color: #ccc;
+  color: #333;
+}
+.btn-sm, .btn-xs {
+  font-size: 13px;
+  line-height: 1.5;
+  padding: 4px 10px 5px;
+}
+.col-md-12 {
+  width: 100%;
+}
+.btn-circle {
+  border-radius: 25px!important;
+}
+

@@ -1,0 +1,28 @@
+.divTitle{
+  background-color: #67809f;
+  border: 1px solid #67809f;
+  border-radius: 4px 4px 0 0;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 12pt;
+  font-weight: 700;
+  margin-bottom: 15px;
+  min-height: 36px;
+  padding: 5px 10px;
+  width: 100%;
+}
+.divTitle h3{
+  color:#fff;
+}
+.hTitle{
+  color: #697882;
+  font-size: 20px;
+  font-weight: 400;
+}
+.hDicTitle{
+  display: inline-block;
+  padding: 10px;
+  margin-top: 15px;
+  float: revert;
+  margin-right: 22px;
+}

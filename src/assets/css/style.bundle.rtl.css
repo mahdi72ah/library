@@ -31893,7 +31893,6 @@ html:not([data-theme=dark]) .theme-light-bg-body {
   box-shadow: none !important;
 }
 .btn:not(.btn-outline):not(.btn-dashed):not(.border-hover):not(.border-active):not(.btn-flush):not(.btn-icon) {
-  border: 0;
   padding: calc(0.775rem + 1px) calc(1.5rem + 1px);
 }
 .btn:not(.btn-outline):not(.btn-dashed):not(.border-hover):not(.border-active):not(.btn-flush):not(.btn-icon).btn-lg, .btn-group-lg > .btn:not(.btn-outline):not(.btn-dashed):not(.border-hover):not(.border-active):not(.btn-flush):not(.btn-icon) {
