@@ -17,6 +17,7 @@
   margin-bottom: 15px;
   min-height: 20px;
   float: right;
+  padding: 5px;
 }
 .form-group div{
   float: right;
@@ -44,4 +45,18 @@ label {
   font-size: 14px;
   font-weight: 400;
 }
-
+.accordion .panel .panel-title {
+  padding: 0;
+}
+.panel-title {
+  font-size: 16px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.panel-title {
+  color: inherit;
+}
+.accordion-item{
+  background-color: #fff;
+  border-bottom:1px solid rgba(0,0,0,.125)!important; ;
+}
