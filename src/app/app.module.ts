@@ -12,9 +12,10 @@ import { TafsilTableComponent } from './table/tafsil-table/tafsil-table.componen
 import {TableComponent} from "./table/table/table.component";
 import { CodeTableComponent } from './table/code-table/code-table.component';
 import { TreeViewComponent } from './tree-view/tree-view.component';
-import {ShareModule} from "./shared/share/share.module";
+import {ShareModule} from "./shared/sharedModule/share.module";
 import {AppRoutingModule} from "./app-routing.module";
 import {BrowserModule} from "@angular/platform-browser";
+import { SharedSliderComponentComponent } from './shared/sharedSliderComponent/shared-slider-component/shared-slider-component.component';
 
 
 

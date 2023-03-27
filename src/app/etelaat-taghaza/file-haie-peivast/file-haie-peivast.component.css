@@ -1,0 +1,28 @@
+table th{
+  color: #333;
+  text-align: center !important;
+}
+table tr td{
+  border: 1px solid #ddd;
+  text-align: center !important;
+  padding: 5px;
+}
+.h3{
+  float: right;
+  font-size: 18px;
+  font-weight: 700!important;
+  margin-top: 20px;
+  padding-right: 10px;
+  width: 100%;
+  color: #e87e04!important;
+}
+.img{
+  width: 30px;
+  height: 30px;
+  margin-top: 5px;
+}
+.imgStatus{
+  width: 20px;
+  height: 20px;
+  margin-top: 10px;
+}
