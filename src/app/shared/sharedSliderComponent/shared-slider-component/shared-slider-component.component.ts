@@ -16,12 +16,11 @@ import {NgImageSliderComponent} from 'ng-image-slider';
 export class SharedSliderComponentComponent implements OnInit{
 
   infinite: boolean = true;
+  imagePopup: boolean = false;
   animationSpeed: number = 0;
 
 
   @Input() images: any[] = [];
-  @Input() imagePopup: boolean = false;
-  @Input() showArrow: boolean = true;
 
 
   @Output() showSlider = new EventEmitter();
@@ -33,9 +32,6 @@ export class SharedSliderComponentComponent implements OnInit{
 
 
   ngOnInit(): void {
-    this.slider!.stopSlideOnHover=false;
-    // this.autoSlide = 1;
-    // this.infinite = true;
   } //end ngOnInit
 
   imagePopupZoom() {
