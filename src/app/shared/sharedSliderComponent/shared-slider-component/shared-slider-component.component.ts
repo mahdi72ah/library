@@ -1,25 +1,73 @@
-import {Component, Input} from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewChild
+} from '@angular/core';
+import {NgImageSliderComponent} from 'ng-image-slider';
 
 @Component({
   selector: 'app-shared-slider-component',
   templateUrl: './shared-slider-component.component.html',
   styleUrls: ['./shared-slider-component.component.css']
 })
-export class SharedSliderComponentComponent {
- @Input() images:any[] = [];
- @Input() infinite:boolean=false;
- @Input() imagePopup:boolean=false;
- @Input() showArrow:boolean=true;
- @Input() autoSlide :number=1;
- @Input() animationSpeed :number=1;
+export class SharedSliderComponentComponent implements OnInit{
 
-  imagePopupZoom(){
-    this.imagePopup=true;
-  setTimeout(()=>{
-    // @ts-ignore
-    document.querySelector('.image-popup').click();
-    this.imagePopup=false;
-  });
+  infinite: boolean = true;
+  animationSpeed: number = 0;
+
+
+  @Input() images: any[] = [];
+  @Input() imagePopup: boolean = false;
+  @Input() showArrow: boolean = true;
+
+
+  @Output() showSlider = new EventEmitter();
+
+  @ViewChild('nav') slider: NgImageSliderComponent | undefined;
+
+  constructor() {
   }
+
+
+  ngOnInit(): void {
+    this.slider!.stopSlideOnHover=false;
+    // this.autoSlide = 1;
+    // this.infinite = true;
+  } //end ngOnInit
+
+  imagePopupZoom() {
+    this.imagePopup = true;
+    setTimeout(() => {
+      // @ts-ignore
+      document.querySelector('.image-popup').click();
+      this.imagePopup = false;
+    });
+  }
+
+  close() {
+    this.showSlider.emit(false);
+  }
+
+
+  click(e: Event) {
+    console.log('eeeeeee', this.slider);
+    // @ts-ignore
+    console.log('vvv', this.slider!.ligthboxImageObj[this.slider!.visiableImageIndex].image.toString());
+// @ts-ignore
+    this.download(this.slider!.ligthboxImageObj[this.slider!.visiableImageIndex].image.toString());
+  }
+
+  download(url: any) {
+    const link = document.createElement('a');
+    link.href = url;
+    // @ts-ignore
+    link.download = this.slider!.ligthboxImageObj[this.slider!.visiableImageIndex].title.toString();// نامی که به اون سند من ذخیره میشه
+    link.click();
+  }
+
+
 
 }

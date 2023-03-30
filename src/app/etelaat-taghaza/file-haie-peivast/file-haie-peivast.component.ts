@@ -13,33 +13,27 @@ export class FileHaiePeivastComponent implements OnInit, OnDestroy {
   dtOptions: DataTables.Settings = {};
   // thus we ensure the data is fetched before rendering
   dtTrigger: Subject<any> = new Subject<any>();
-  @ViewChild('nav') slider: NgImageSliderComponent | undefined;
+  showSlider:boolean=false;
 
   data: IfilePeivast[] = [];
 
-  imageObject= [{
-    image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/5.jpg',
-    thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/5.jpg',
-    title: 'Hummingbirds are amazing creatures'
-  }, {
-    image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/9.jpg',
-    thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/9.jpg'
-  }, {
-    image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/4.jpg',
-    thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/4.jpg',
-    title: 'Example with title.'
-  },{
-    image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/7.jpg',
-    thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/7.jpg',
-    title: 'Hummingbirds are amazing creatures'
-  }, {
-    image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/1.jpg',
-    thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/1.jpg'
-  }, {
-    image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/2.jpg',
-    thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/2.jpg',
-    title: 'Example two with title.'
-  }];
+  imageObject= [
+    {
+      image: '../../../../assets/icon/2 (1).jpg',
+      thumbImage: '../../../../assets/icon/2 (1).jpg',
+      title: 'سند مالکیت عسل حمیدی فریمانی'
+    },
+    {
+      image: '../../../../assets/icon/3.jpg',
+      thumbImage: '../../../../assets/icon/3.jpg',
+      title: 'پروانه ساختمانی عسل حمیدی فریمانی'
+    },
+    {
+      image: '../../../../assets/icon/4.jpg',
+      thumbImage: '../../../../assets/icon/4.jpg',
+      title: 'صفحه دوم پروانه ساختمانی عسل حمیدی فریمانی'
+    }
+  ];
 
   constructor() {
   }
@@ -76,13 +70,16 @@ export class FileHaiePeivastComponent implements OnInit, OnDestroy {
     this.dtTrigger.unsubscribe();
   }
 
-  prevImageClick() {
-    alert();
-    this.slider!.prev();
+  scrollTopAndShow(){
+    //window.scrollTo(0, 0);
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+    this.showSlider=true;
   }
 
-  nextImageClick() {
-    this.slider!.next();
+  close(close:any){
+    this.showSlider=close;
+    // @ts-ignore
+    $("html, body").animate({ scrollTop: $('#slide').offset().top }, 3000);
   }
 
 } // end Class
