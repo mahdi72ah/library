@@ -3,7 +3,10 @@
 <div class="pos" >
  <img title="بستن" (click)="close()" class="img" src="../../../../assets/icon/close.png"/>
  <img title="دانلود" (click)="click($event)" class="img" src="../../../../assets/icon/download.png"/>
- <img title="بزرگ نمائی" (click)="imagePopupZoom()" class="img" src="../../../../assets/icon/zoom.png"/>
+ <img title="تمام صفحه" (click)="imagePopupZoom()" class="img" src="../../../../assets/icon/full.png"/>
+ <img title="بزرگ نمائی" (click)="zoom()" #zoomIcon class="img" src="../../../../assets/icon/zoom.png"/>
+ <img title="کوچک نمائی"  (click)="zoomOut()" #zoomout id="zoomout" class="imgZoomOut" src="../../../../assets/icon/zoom-out-siah.png"/>
+ <img title="کوچک نمائی"  class="img hide" src="../../../../assets/icon/zoom-out-siah.png"/>
 <div style="position: relative;top: 0;">
   <ng-image-slider
     #nav
@@ -11,12 +14,29 @@
     [manageImageRatio]="true"
     [infinite]="infinite"
     [animationSpeed]="animationSpeed"
-    [imagePopup]="false"
+    [imagePopup]="imagePopup"
     [imageSize]="{width: '100%', height: 442, space: 10}"
     slideImage="1">
   </ng-image-slider>
 </div>
 </div>
+
+
+<div
+  #container
+  class="container"
+>
+  <img
+    [src]="src"
+    (click)="onClick($event)"
+    (mousedown)="onMouseDown($event)"
+    (mousemove)="mouseMoveHandler($event)"
+    #img
+    style="cursor : zoom-in; width:100%; transition: all .3s; position: absolute "
+  />
+</div>
+
+
 
 
 
