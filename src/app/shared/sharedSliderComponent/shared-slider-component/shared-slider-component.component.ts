@@ -35,6 +35,13 @@ export class SharedSliderComponentComponent implements OnInit{
   @ViewChild('img') 'img': ElementRef;
   @ViewChild('zoomout') 'zoomout': ElementRef;
   @ViewChild('zoomIcon') 'zoomIcon': ElementRef;
+  @ViewChild('closesefid') 'closesefid': ElementRef;
+  @ViewChild('closesiah') 'closesiah': ElementRef;
+  @ViewChild('downloadsefid') 'downloadsefid': ElementRef;
+  @ViewChild('downloadsiah') 'downloadsiah': ElementRef;
+  @ViewChild('fullsefid') 'fullsefid': ElementRef;
+  @ViewChild('fullsiah') 'fullsiah': ElementRef;
+
 
   constructor(private el: ElementRef) {
   }
@@ -43,8 +50,18 @@ export class SharedSliderComponentComponent implements OnInit{
       // @ts-ignore
     this.src=this.slider!.ligthboxImageObj[this.slider!.visiableImageIndex].image.toString();
     this.container.nativeElement.classList.add('show');
+
     this.zoomout.nativeElement.classList.add('show');
+    this.closesiah.nativeElement.classList.add('show');
+    this.downloadsiah.nativeElement.classList.add('show');
+    this.fullsiah.nativeElement.classList.add('show');
+
+
     this.zoomIcon.nativeElement.classList.add('hide');
+    this.closesefid.nativeElement.classList.add('hide');
+    this.downloadsefid.nativeElement.classList.add('hide');
+    this.fullsefid.nativeElement.classList.add('hide');
+
   }
 
   zoomOut(){
@@ -52,9 +69,22 @@ export class SharedSliderComponentComponent implements OnInit{
     // @ts-ignore
     this.src='';
     this.container.nativeElement.classList.remove('show');
+
     this.zoomout.nativeElement.classList.remove('show');
     this.zoomIcon.nativeElement.classList.remove('hide');
     this.zoomIcon.nativeElement.classList.add('show');
+
+    this.closesiah.nativeElement.classList.remove('show');
+    this.closesefid.nativeElement.classList.remove('hide');
+    this.closesefid.nativeElement.classList.add('show');
+
+    this.downloadsiah.nativeElement.classList.remove('show');
+    this.downloadsefid.nativeElement.classList.remove('hide');
+    this.downloadsefid.nativeElement.classList.add('show');
+
+    this.fullsiah.nativeElement.classList.remove('show');
+    this.fullsefid.nativeElement.classList.remove('hide');
+    this.fullsefid.nativeElement.classList.add('show');
   }
 
 

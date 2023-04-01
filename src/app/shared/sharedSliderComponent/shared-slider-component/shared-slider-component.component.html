@@ -1,9 +1,12 @@
 
 
 <div class="pos" >
- <img title="بستن" (click)="close()" class="img" src="../../../../assets/icon/close.png"/>
- <img title="دانلود" (click)="click($event)" class="img" src="../../../../assets/icon/download.png"/>
- <img title="تمام صفحه" (click)="imagePopupZoom()" class="img" src="../../../../assets/icon/full.png"/>
+ <img title="بستن" (click)="close()" #closesefid class="img" src="../../../../assets/icon/close.png"/>
+ <img title="بستن" (click)="close()" #closesiah class="imgZoomOut" src="../../../../assets/icon/close-black.png"/>
+ <img title="دانلود" (click)="click($event)" #downloadsefid class="img" src="../../../../assets/icon/download.png"/>
+ <img title="دانلود" (click)="click($event)" #downloadsiah class="imgZoomOut" src="../../../../assets/icon/downloading-black.png"/>
+ <img title="تمام صفحه" (click)="imagePopupZoom()" #fullsefid class="img" src="../../../../assets/icon/full.png"/>
+ <img title="تمام صفحه" (click)="imagePopupZoom()" #fullsiah class="imgZoomOut" src="../../../../assets/icon/full-screen-black.png"/>
  <img title="بزرگ نمائی" (click)="zoom()" #zoomIcon class="img" src="../../../../assets/icon/zoom.png"/>
  <img title="کوچک نمائی"  (click)="zoomOut()" #zoomout id="zoomout" class="imgZoomOut" src="../../../../assets/icon/zoom-out-siah.png"/>
  <img title="کوچک نمائی"  class="img hide" src="../../../../assets/icon/zoom-out-siah.png"/>
