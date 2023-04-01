@@ -9,6 +9,7 @@ import {NgImageSliderModule} from "ng-image-slider";
 import {
   SharedSliderComponentComponent
 } from "../sharedSliderComponent/shared-slider-component/shared-slider-component.component";
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 
 
 
@@ -23,7 +24,8 @@ import {
     FormsModule,
     TreeModule,
     DataTablesModule,
-    NgImageSliderModule
+    NgImageSliderModule,
+    FontAwesomeModule
   ],
   exports:[
     ToolbarComponent,
