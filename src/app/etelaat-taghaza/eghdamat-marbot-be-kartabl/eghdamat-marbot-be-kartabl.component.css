@@ -1,0 +1,39 @@
+fieldset, .fieldset {
+  background-color: #fff;
+  padding-top: 0;
+  border: 1px solid #67809f;
+  border-radius: 12px;
+  box-sizing: border-box;
+  clear: both;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  overflow: hidden;
+}
+fieldset legend {
+  background-color: #67809f;
+  border: 1px solid #67809f;
+  border-radius: 4px 4px 0 0;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 12pt;
+  font-weight: 700;
+  margin-bottom: 15px;
+  min-height: 36px;
+  padding: 5px 10px;
+  width: 100%;
+}
+.blue.btn {
+  background-color: #3598dc;
+  color: #fff;
+}
+a i{
+  color:#fff;
+}
+.btn {
+  border-width: 0;
+  font-size: 14px;
+  padding: 7px 14px !important;
+}
+
+

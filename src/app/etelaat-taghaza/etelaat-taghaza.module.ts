@@ -7,6 +7,7 @@ import {ShareModule} from "../shared/sharedModule/share.module";
 import { MateghazieDarkhastComponent } from './mateghazie-darkhast/mateghazie-darkhast.component';
 import { EtelaatMoshtarekComponent } from './etelaat-moshtarek/etelaat-moshtarek.component';
 import { FileHaiePeivastComponent } from './file-haie-peivast/file-haie-peivast.component';
+import { EghdamatMarbotBeKartablComponent } from './eghdamat-marbot-be-kartabl/eghdamat-marbot-be-kartabl.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { FileHaiePeivastComponent } from './file-haie-peivast/file-haie-peivast.
     EtelaatTaghazaComponent,
     MateghazieDarkhastComponent,
     EtelaatMoshtarekComponent,
-    FileHaiePeivastComponent
+    FileHaiePeivastComponent,
+    EghdamatMarbotBeKartablComponent
   ],
   imports: [
     CommonModule,
