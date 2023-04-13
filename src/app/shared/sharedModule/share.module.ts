@@ -10,6 +10,9 @@ import {
   SharedSliderComponentComponent
 } from "../sharedSliderComponent/shared-slider-component/shared-slider-component.component";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {TreeTableModule} from "primeng/treetable";
+import {InputTextModule} from "primeng/inputtext";
 
 
 
@@ -21,21 +24,27 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
   imports: [
     HttpClientModule,
     CommonModule,
+    BrowserAnimationsModule,
     FormsModule,
     TreeModule,
     DataTablesModule,
     NgImageSliderModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    TreeTableModule,
+    InputTextModule
   ],
   exports:[
     ToolbarComponent,
+    BrowserAnimationsModule,
     SharedSliderComponentComponent,
     CommonModule,
     HttpClientModule,
     FormsModule,
     TreeModule,
     DataTablesModule,
-    NgImageSliderModule
+    NgImageSliderModule,
+    TreeTableModule,
+    InputTextModule
   ]
 })
 export class ShareModule { }

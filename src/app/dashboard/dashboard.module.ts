@@ -8,6 +8,9 @@ import { AmarVaDarkhasthaComponent } from './amar-va-darkhastha/amar-va-darkhast
 import { EtelaatAmaryComponent } from './etelaat-amary/etelaat-amary.component';
 import { EtelaatDarkhasthaComponent } from './etelaat-darkhastha/etelaat-darkhastha.component';
 import { ShowChildRowEtelaatDarkhasthaComponent } from './show-child-row-etelaat-darkhastha/show-child-row-etelaat-darkhastha.component';
+import {TableModule} from "primeng/table";
+import {ButtonModule} from "primeng/button";
+import {SelectButtonModule} from "primeng/selectbutton";
 
 
 
@@ -20,9 +23,12 @@ import { ShowChildRowEtelaatDarkhasthaComponent } from './show-child-row-etelaat
     EtelaatDarkhasthaComponent,
     ShowChildRowEtelaatDarkhasthaComponent
   ],
-  imports: [
-    DashboardRoutingModule,
-    ShareModule
-  ]
+    imports: [
+        DashboardRoutingModule,
+        ShareModule,
+        TableModule,
+        ButtonModule,
+        SelectButtonModule
+    ]
 })
 export class DashboardModule { }
