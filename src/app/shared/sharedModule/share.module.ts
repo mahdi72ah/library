@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import {ToolbarComponent} from "../toolbar/toolbar.component";
-import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import {TreeModule} from "primeng/tree";
 import {DataTablesModule} from "angular-datatables";
@@ -13,6 +11,13 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {TreeTableModule} from "primeng/treetable";
 import {InputTextModule} from "primeng/inputtext";
+import {CommonModule} from "@angular/common";
+import {BrowserModule} from "@angular/platform-browser";
+import {HttpClientModule} from "@angular/common/http";
+
+
+
+
 
 
 
@@ -24,7 +29,6 @@ import {InputTextModule} from "primeng/inputtext";
   imports: [
     HttpClientModule,
     CommonModule,
-    BrowserAnimationsModule,
     FormsModule,
     TreeModule,
     DataTablesModule,
@@ -34,11 +38,10 @@ import {InputTextModule} from "primeng/inputtext";
     InputTextModule
   ],
   exports:[
-    ToolbarComponent,
-    BrowserAnimationsModule,
-    SharedSliderComponentComponent,
-    CommonModule,
     HttpClientModule,
+    CommonModule,
+    ToolbarComponent,
+    SharedSliderComponentComponent,
     FormsModule,
     TreeModule,
     DataTablesModule,

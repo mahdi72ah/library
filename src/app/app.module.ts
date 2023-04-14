@@ -4,7 +4,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { ToolbarComponent } from './shared/toolbar/toolbar.component';
-import {HTTP_INTERCEPTORS} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {SidebarService} from "./shared/sidebar/shared/services/sidebar.service";
 import {LibraryInterceptor} from "./utilities/libraryInterceptor";
 import { ChildTableComponent } from './table/child-table/child-table.component';
@@ -14,9 +14,8 @@ import { CodeTableComponent } from './table/code-table/code-table.component';
 import { TreeViewComponent } from './tree-view/tree-view.component';
 import {ShareModule} from "./shared/sharedModule/share.module";
 import {AppRoutingModule} from "./app-routing.module";
-import {BrowserModule} from "@angular/platform-browser";
-import { SharedSliderComponentComponent } from './shared/sharedSliderComponent/shared-slider-component/shared-slider-component.component';
-
+import { BrowserModule } from '@angular/platform-browser'
+import { CommonModule } from '@angular/common'
 
 
 @NgModule({
@@ -32,8 +31,8 @@ import { SharedSliderComponentComponent } from './shared/sharedSliderComponent/s
     TreeViewComponent
   ],
   imports: [
-    ShareModule,
     BrowserModule,
+    ShareModule,
     AppRoutingModule
   ],
   providers: [

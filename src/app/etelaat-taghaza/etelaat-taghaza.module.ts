@@ -8,6 +8,7 @@ import { MateghazieDarkhastComponent } from './mateghazie-darkhast/mateghazie-da
 import { EtelaatMoshtarekComponent } from './etelaat-moshtarek/etelaat-moshtarek.component';
 import { FileHaiePeivastComponent } from './file-haie-peivast/file-haie-peivast.component';
 import { EghdamatMarbotBeKartablComponent } from './eghdamat-marbot-be-kartabl/eghdamat-marbot-be-kartabl.component';
+import {BrowserModule} from "@angular/platform-browser";
 
 
 @NgModule({
@@ -19,8 +20,8 @@ import { EghdamatMarbotBeKartablComponent } from './eghdamat-marbot-be-kartabl/e
     EghdamatMarbotBeKartablComponent
   ],
   imports: [
-    CommonModule,
     ShareModule,
+    CommonModule,
     EtelaatTaghazaRoutingModule
   ]
 })

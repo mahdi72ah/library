@@ -152,24 +152,7 @@ export class EtelaatDarkhasthaComponent implements OnInit, OnDestroy, AfterViewI
   }
 
   ngAfterViewInit() {
-    const self = this
-    this.datatableElement.dtInstance.then(table => {
-      // Add event listener for opening and closing details
-      $('table tbody').on('click', 'td.details-control', function () {
-        var tr = $(this).closest('tr');
-        var row = table.row(tr);
 
-        if (row.child.isShown()) {
-          // This row is already open - close it
-          row.child.hide();
-          tr.removeClass('shown');
-        } else {
-          // Open this row
-          row.child(self.format(row.data())).show();
-          tr.addClass('shown');
-        }
-      });
-    })
   }
 
   expandRow(trRef: any, rowData: any) {
