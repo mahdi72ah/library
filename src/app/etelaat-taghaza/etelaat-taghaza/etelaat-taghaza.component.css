@@ -11,6 +11,31 @@
   padding: 5px 10px;
   width: 100%;
 }
+.btn:disabled, .btn:focus, .btn:hover, .btn[disabled] {
+  background-image: none!important;
+  box-shadow: none;
+  filter: none;
+  outline: none!important;
+  text-shadow: none;
+}
+.btn {
+  border-width: 0;
+  font-size: 14px;
+  padding: 7px 14px;
+}
+.blue.btn {
+  background-color: #3598dc;
+  color: #fff;
+}
+.blue i {
+  background-color: #3598dc;
+  color: #fff;
+}
+#buttonGetDiv{
+  float: left;
+  margin-top: 30px;
+  width: 171px;
+}
 .divTitle h3{
   color:#fff;
 }

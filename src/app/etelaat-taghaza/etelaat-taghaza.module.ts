@@ -9,6 +9,8 @@ import { EtelaatMoshtarekComponent } from './etelaat-moshtarek/etelaat-moshtarek
 import { FileHaiePeivastComponent } from './file-haie-peivast/file-haie-peivast.component';
 import { EghdamatMarbotBeKartablComponent } from './eghdamat-marbot-be-kartabl/eghdamat-marbot-be-kartabl.component';
 import {BrowserModule} from "@angular/platform-browser";
+import { MohasebatarkhastComponent } from './mohasebatarkhast/mohasebatarkhast.component';
+import {ButtonModule} from "primeng/button";
 
 
 @NgModule({
@@ -17,12 +19,14 @@ import {BrowserModule} from "@angular/platform-browser";
     MateghazieDarkhastComponent,
     EtelaatMoshtarekComponent,
     FileHaiePeivastComponent,
-    EghdamatMarbotBeKartablComponent
+    EghdamatMarbotBeKartablComponent,
+    MohasebatarkhastComponent
   ],
-  imports: [
-    ShareModule,
-    CommonModule,
-    EtelaatTaghazaRoutingModule
-  ]
+    imports: [
+        ShareModule,
+        CommonModule,
+        EtelaatTaghazaRoutingModule,
+        ButtonModule
+    ]
 })
 export class EtelaatTaghazaModule { }
