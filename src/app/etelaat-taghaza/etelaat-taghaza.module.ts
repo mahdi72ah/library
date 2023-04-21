@@ -8,9 +8,9 @@ import { MateghazieDarkhastComponent } from './mateghazie-darkhast/mateghazie-da
 import { EtelaatMoshtarekComponent } from './etelaat-moshtarek/etelaat-moshtarek.component';
 import { FileHaiePeivastComponent } from './file-haie-peivast/file-haie-peivast.component';
 import { EghdamatMarbotBeKartablComponent } from './eghdamat-marbot-be-kartabl/eghdamat-marbot-be-kartabl.component';
-import {BrowserModule} from "@angular/platform-browser";
 import { MohasebatarkhastComponent } from './mohasebatarkhast/mohasebatarkhast.component';
 import {ButtonModule} from "primeng/button";
+
 
 
 @NgModule({
