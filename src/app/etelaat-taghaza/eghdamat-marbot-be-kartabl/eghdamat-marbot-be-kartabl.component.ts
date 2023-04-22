@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subject} from "rxjs";
 import {LanguageApp} from "../../dashboard/shared/class/LanguageApp";
 import {ImoshahedeSabeghe} from "../shared/interFace/ImoshahedeSabeghe";
+import {IroidadHa} from "../../list-darkhasthaie-faal/shared/interFace/IroidadHa";
 
 
 @Component({
@@ -14,6 +15,7 @@ export class EghdamatMarbotBeKartablComponent implements OnInit, OnDestroy {
   // thus we ensure the data is fetched before rendering
   dtTrigger: Subject<any> = new Subject<any>();
   data:ImoshahedeSabeghe[]=[];
+  roidadHa: IroidadHa[] = [];
   constructor() { }
 
   ngOnInit(): void {
@@ -23,6 +25,18 @@ export class EghdamatMarbotBeKartablComponent implements OnInit, OnDestroy {
       ordering: true,
       language: LanguageApp.persian_datatables
     };
+
+    this.roidadHa = [
+      {
+        name: 'تعاونی خاتم الانبیاء - پیمانکار فرهادگرد',
+        tozihat: 'ارجاع دادن درخواست به مرحله بعد',
+        date: '1402/01/28-11:11:00'
+      },{
+        name: 'تعاونی خاتم الانبیاء - پیمانکار فرهادگرد', tozihat: 'اخذ کردن درخواست', date: '1402/02/28-11:11:00'
+      },{
+        name: 'تعاونی خاتم الانبیاء - پیمانکار فرهادگرد', tozihat: 'مشاهده درخواست', date: '1402/03/28-11:11:00'
+      }
+    ]
 
     this.data = [
       {
