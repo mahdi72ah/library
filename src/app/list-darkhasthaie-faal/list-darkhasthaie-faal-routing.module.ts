@@ -4,7 +4,8 @@ import {ListDarkhasthaieFaalComponent} from "./list-darkhasthaie-faal/list-darkh
 
 const routes: Routes = [
   {path:'',component:ListDarkhasthaieFaalComponent,children:[
-      {path:'listGrad/:id',component:ListDarkhasthaieFaalComponent}
+      {path:'Inbox/:id',component:ListDarkhasthaieFaalComponent},
+      {path:'Inbox',component:ListDarkhasthaieFaalComponent}
     ]}
 ];
 

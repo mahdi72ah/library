@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {IlistDarkhasthaieFaal} from "../shared/interFace/IlistDarkhasthaieFaal";
-import {Subject} from "rxjs";
+import {empty, Subject} from "rxjs";
 import {LanguageApp} from "../../dashboard/shared/class/LanguageApp";
 import {ImoshahedeSabeghe} from "../../etelaat-taghaza/shared/interFace/ImoshahedeSabeghe";
 import {IroidadHa} from "../shared/interFace/IroidadHa";
@@ -580,8 +580,15 @@ export class ListDarkhasthaieFaalComponent implements OnInit, OnDestroy {
     }, 1000);
 
     this.id = this.activatedRoute.parent?.snapshot.params['id'];
+
     this.activatedRoute.firstChild!.params.subscribe(res => {
-      this.data = this.dataTotal.filter(s => s.shomareDarkhast === +res['id']);
+      debugger;
+      console.log('id=>',+res['id']);
+      if(Object.keys(res).length==0){
+        this.data = this.dataTotal;
+      }else {
+        this.data = this.dataTotal.filter(s => s.shomareDarkhast === +res['id']);
+      }
     });
     this.search(null!);
 
