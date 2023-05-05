@@ -1,7 +1,14 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {Component, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
+import {
+  ActivatedRoute,
+  ActivatedRouteSnapshot,
+  ActivationStart,
+  NavigationEnd,
+  Router,
+  RoutesRecognized
+} from "@angular/router";
 import {IlistDarkhasthaieFaal} from "../shared/interFace/IlistDarkhasthaieFaal";
-import {empty, Subject} from "rxjs";
+import {empty, filter, map, Subject, Subscription} from "rxjs";
 import {LanguageApp} from "../../dashboard/shared/class/LanguageApp";
 import {ImoshahedeSabeghe} from "../../etelaat-taghaza/shared/interFace/ImoshahedeSabeghe";
 import {IroidadHa} from "../shared/interFace/IroidadHa";
@@ -14,6 +21,7 @@ import {IroidadHa} from "../shared/interFace/IroidadHa";
 export class ListDarkhasthaieFaalComponent implements OnInit, OnDestroy {
 
   id: string = '';
+  status:any;
   dataTotal: IlistDarkhasthaieFaal[] = [];
   data: IlistDarkhasthaieFaal[] = [];
   newData: IlistDarkhasthaieFaal[] = [];
@@ -23,9 +31,30 @@ export class ListDarkhasthaieFaalComponent implements OnInit, OnDestroy {
   dtOptions: DataTables.Settings = {};
   // thus we ensure the data is fetched before rendering
   dtTrigger: Subject<any> = new Subject<any>();
+  subs: Array<Subscription> = [];
+  constructor(private activatedRoute: ActivatedRoute,private router: Router) {
 
-  constructor(private activatedRoute: ActivatedRoute) {
-
+    this.subs[0] = this.router.events
+      .pipe(
+        filter(event => event instanceof NavigationEnd),
+        map(() => this.activatedRoute.snapshot),
+        map(route => {
+          console.log('this.activatedRoute.snapshot =>',this.activatedRoute.snapshot);
+          while (route.firstChild) {
+            route = route.firstChild;
+          }
+          return route;
+        })
+      ).subscribe((route: ActivatedRouteSnapshot) => {
+        this.status=route.data['status'];
+        if(this.status){
+          this.status=route.data['status'];
+        }else {
+          debugger;
+          this.status='';
+        }
+        console.log('fff=>',this.status);
+      });
   }
 
   ngOnInit(): void {
@@ -582,7 +611,6 @@ export class ListDarkhasthaieFaalComponent implements OnInit, OnDestroy {
     this.id = this.activatedRoute.parent?.snapshot.params['id'];
 
     this.activatedRoute.firstChild!.params.subscribe(res => {
-      debugger;
       console.log('id=>',+res['id']);
       if(Object.keys(res).length==0){
         this.data = this.dataTotal;
@@ -614,6 +642,5 @@ export class ListDarkhasthaieFaalComponent implements OnInit, OnDestroy {
     // Do not forget to unsubscribe the event
     this.dtTrigger.unsubscribe();
   }
-
 
 }

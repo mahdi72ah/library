@@ -11,7 +11,7 @@ const routes: Routes = [
   {path:'table',component:TableComponent},
   {path:'tree',component:TreeViewComponent},
   {path:"dashboard", loadChildren: () => import('./dashboard/dashboard.module').then(q => q.DashboardModule),},
-  {path:"listDarkhasthaieFaal",loadChildren:()=>import('./list-darkhasthaie-faal/list-darkhasthaie-faal.module').then(q=>q.ListDarkhasthaieFaalModule)},
+  {path:"Main",loadChildren:()=>import('./list-darkhasthaie-faal/list-darkhasthaie-faal.module').then(q=>q.ListDarkhasthaieFaalModule)},
   {path:'etelaatTaghaza',loadChildren:()=>import('./etelaat-taghaza/etelaat-taghaza.module').then(q=>q.EtelaatTaghazaModule)}
 ];
 

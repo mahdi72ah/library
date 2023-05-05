@@ -93,11 +93,24 @@
                  [dtTrigger]="dtTrigger">
             <!--begin::Table head-->
             <thead style="background-color: #d9edf7;">
-            <tr>
-              <th style="background-color: #67809f!important;width: 100%;border-left-width: 1px;text-align: right !important;padding-right: 15px;color: #fff;" colspan="12" rowspan="1">
-                لیست درخواست‌های فعال
+            <tr *ngIf="status=='';else statusTem">
+              <th  style="background-color: #67809f!important;width: 100%;border-left-width: 1px;text-align: right !important;padding-right: 15px;color: #fff;" colspan="12" rowspan="1">
+                 لیست درخواست‌های فعال
               </th>
             </tr>
+
+            <ng-template #statusTem>
+              <tr>
+                  <th style="background-color: #67809f!important;width: 100%;border-left-width: 1px;text-align: right !important;padding-right: 15px;color: #fff;" colspan="12" rowspan="1">
+                    لیست درخواست‌های فعال
+                    ({{status}})
+                  </th>
+              </tr>
+            </ng-template>
+
+
+
+
             <!--begin::Table row-->
             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
               <th style="width:74px;">شماره درخواست</th>
