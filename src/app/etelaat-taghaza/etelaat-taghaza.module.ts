@@ -10,6 +10,7 @@ import { FileHaiePeivastComponent } from './file-haie-peivast/file-haie-peivast.
 import { EghdamatMarbotBeKartablComponent } from './eghdamat-marbot-be-kartabl/eghdamat-marbot-be-kartabl.component';
 import { MohasebatarkhastComponent } from './mohasebatarkhast/mohasebatarkhast.component';
 import {ButtonModule} from "primeng/button";
+import {ListDarkhasthaieFaalModule} from "../list-darkhasthaie-faal/list-darkhasthaie-faal.module";
 
 
 
@@ -26,7 +27,8 @@ import {ButtonModule} from "primeng/button";
         ShareModule,
         CommonModule,
         EtelaatTaghazaRoutingModule,
-        ButtonModule
+        ButtonModule,
+        ListDarkhasthaieFaalModule
     ]
 })
 export class EtelaatTaghazaModule { }

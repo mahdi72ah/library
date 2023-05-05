@@ -608,16 +608,14 @@ export class ListDarkhasthaieFaalComponent implements OnInit, OnDestroy {
       this.dtTrigger.next();
     }, 1000);
 
-    this.id = this.activatedRoute.parent?.snapshot.params['id'];
+    this.id = this.activatedRoute.snapshot.params['id'];
 
-    this.activatedRoute.firstChild!.params.subscribe(res => {
-      console.log('id=>',+res['id']);
-      if(Object.keys(res).length==0){
-        this.data = this.dataTotal;
-      }else {
-        this.data = this.dataTotal.filter(s => s.shomareDarkhast === +res['id']);
-      }
-    });
+    if(this.id){
+      this.data = this.dataTotal.filter(s => s.shomareDarkhast === +this.id);
+    }else {
+      this.data = this.dataTotal;
+    }
+
     this.search(null!);
 
   } // end ngOnInit

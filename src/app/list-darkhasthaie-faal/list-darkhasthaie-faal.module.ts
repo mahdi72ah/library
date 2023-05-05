@@ -5,17 +5,24 @@ import {ListDarkhasthaieFaalRoutingModule} from './list-darkhasthaie-faal-routin
 import {ListDarkhasthaieFaalComponent} from './list-darkhasthaie-faal/list-darkhasthaie-faal.component';
 import {DataTablesModule} from "angular-datatables";
 import {CommonModule} from "@angular/common";
+import { ListDarkhasthaieFaalBaEtelaatBishtarComponent } from './list-darkhasthaie-faal-ba-etelaat-bishtar/list-darkhasthaie-faal-ba-etelaat-bishtar.component';
+import {ListDarkhasthaieFaalMainComponent} from "./list-darkhasthaie-faal-main/list-darkhasthaie-faal-main.component";
 
 
 @NgModule({
-  declarations: [
-    ListDarkhasthaieFaalComponent
-  ],
-  imports: [
-    CommonModule,
-    ListDarkhasthaieFaalRoutingModule,
-    DataTablesModule
-  ]
+    declarations: [
+        ListDarkhasthaieFaalComponent,
+        ListDarkhasthaieFaalBaEtelaatBishtarComponent,
+        ListDarkhasthaieFaalMainComponent
+    ],
+    exports: [
+
+    ],
+    imports: [
+        CommonModule,
+        ListDarkhasthaieFaalRoutingModule,
+        DataTablesModule
+    ]
 })
 export class ListDarkhasthaieFaalModule {
 }
