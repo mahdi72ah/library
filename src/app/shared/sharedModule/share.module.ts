@@ -8,11 +8,9 @@ import {
   SharedSliderComponentComponent
 } from "../sharedSliderComponent/shared-slider-component/shared-slider-component.component";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {TreeTableModule} from "primeng/treetable";
 import {InputTextModule} from "primeng/inputtext";
 import {CommonModule} from "@angular/common";
-import {BrowserModule} from "@angular/platform-browser";
 import {HttpClientModule} from "@angular/common/http";
 
 

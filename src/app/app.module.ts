@@ -15,7 +15,8 @@ import { TreeViewComponent } from './tree-view/tree-view.component';
 import {ShareModule} from "./shared/sharedModule/share.module";
 import {AppRoutingModule} from "./app-routing.module";
 import { BrowserModule } from '@angular/platform-browser'
-import { CommonModule } from '@angular/common'
+import {FormsModule} from "@angular/forms";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
 @NgModule({
@@ -33,7 +34,9 @@ import { CommonModule } from '@angular/common'
   imports: [
     BrowserModule,
     ShareModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     SidebarService,
