@@ -22,12 +22,11 @@
   margin-right:0 !important;
 }
 .gap-2{
-  margin: 0;
-  position: absolute;
   top: 10%;
   left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+}
+.p-dropdown .p-dropdown-clear-icon {
+  right: 3px !important;
 }
 .p-dropdown-item{
   padding-top: 10px !important;

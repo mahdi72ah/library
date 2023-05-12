@@ -1,15 +1,18 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {LanguageApp} from "../../dashboard/shared/class/LanguageApp";
+import {Subject} from "rxjs";
 
 @Component({
   selector: 'app-list-darkhasthaie-faal-ba-etelaat-bishtar',
   templateUrl: './list-darkhasthaie-faal-ba-etelaat-bishtar.component.html',
   styleUrls: ['./list-darkhasthaie-faal-ba-etelaat-bishtar.component.css']
 })
-export class ListDarkhasthaieFaalBaEtelaatBishtarComponent implements OnInit {
+export class ListDarkhasthaieFaalBaEtelaatBishtarComponent implements OnInit, OnDestroy {
   countries: any[] | undefined;
-
+  dtOptions: DataTables.Settings = {};
   selectedCountry: string | undefined;
-
+  dtTrigger: Subject<any> = new Subject<any>();
+  newData:any;
 
   ngOnInit() {
     this.countries = [
@@ -46,11 +49,27 @@ export class ListDarkhasthaieFaalBaEtelaatBishtarComponent implements OnInit {
       { name: 'برگشت ودیعه ساخت و ساز- مرحله بررسی اولیه', code: '30' },
       { name: 'پاسخ به استعلام- مرحله اطلاعات تصحیح قرارداد', code: '31' }
     ];
+    this.dtOptions = {
+      pagingType: 'full_numbers',
+      pageLength: 10,
+      ordering: true,
+      language: LanguageApp.persian_datatables
+    };
+    setTimeout(() => {
+      // @ts-ignore
+      this.dtTrigger.next();
+    }, 1000);
+
+
+
+  }// End ngOnInit
+
+
+
+  ngOnDestroy(): void {
+    // Do not forget to unsubscribe the event
+    this.dtTrigger.unsubscribe();
   }
 
 
-
-
-
-
-}
+}// End Class

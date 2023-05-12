@@ -45,7 +45,8 @@
                 <label class="control-label col-md-2">
                   شهر:
                 </label>
-                <div class="col-md-9">
+                <div class="col-md-9" style="margin-right: 60px;margin-top: -26px;position: relative;">
+                  <img src="../../../assets/icon/down.png" style="position: absolute;top: 15px;right: 353px;width: 14px;"/>
                   <select class="form-control" id="city" name="city" aria-invalid="false"><option value="">مشخص کنید</option>
                     <option value="dytImn3e42xeO8rU1ysoSGjOKQo2ooto2oot">فریمان</option>
                     <option value="8gTBzcN4RGwAix5ZA3osUAo2ooto2oot">بخش مرکزی فریمان</option>
@@ -59,24 +60,27 @@
               <div class="form-group col-md-5">
 
 
-
-
-                <div class="card flex justify-content-center">
-                  <p-dropdown [style]="{'width':'100%'}" [options]="countries" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedCountry" optionLabel="name" [filter]="true" filterBy="name" [showClear]="true" placeholder="مشخص کنید...">
-                    <ng-template pTemplate="selectedItem">
-                      <div class="flex align-items-center gap-2" *ngIf="selectedCountry">
-                        <img src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png" [class]="'flag flag-' + selectedCountry.code.toLowerCase()" style="width: 18px"/>
-                        <div>{{ selectedCountry.name }}</div>
-                      </div>
-                    </ng-template>
-                    <ng-template let-country pTemplate="item">
-                      <div class="flex align-items-center gap-2">
-                        <img src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png" [class]="'flag flag-' + country.code.toLowerCase()" style="width: 18px"/>
-                        <div>{{ country.name }}</div>
-                      </div>
-                    </ng-template>
-                  </p-dropdown>
+                <label class="control-label col-md-2">
+                  مرحله:
+                </label>
+                <div  style="margin-right: 60px;margin-top: -26px;">
+                  <div class="card flex justify-content-center">
+                    <p-dropdown [style]="{'width':'100%'}" [options]="countries" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedCountry" optionLabel="name" [filter]="true" filterBy="name" [showClear]="true" placeholder="مشخص کنید...">
+                      <ng-template pTemplate="selectedItem">
+                        <div class="flex align-items-center gap-2" *ngIf="selectedCountry">
+                          <div>{{ selectedCountry.name }}</div>
+                        </div>
+                      </ng-template>
+                      <ng-template let-country pTemplate="item">
+                        <div class="flex align-items-center gap-2">
+                          <div>{{ country.name }}</div>
+                        </div>
+                      </ng-template>
+                    </p-dropdown>
+                  </div>
                 </div>
+
+
 
 
 
@@ -92,14 +96,121 @@
 
 
 
-          <div class="container-fluid margin-top-20">
-            <div id="flowWithInfo_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-6"><div class="dataTables_length" id="flowWithInfo_length"><label><select name="flowWithInfo_length" aria-controls="flowWithInfo" class="form-control input-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select></label></div></div><div class="col-sm-6"><div id="flowWithInfo_filter" class="dataTables_filter"><label>جستجو:<input type="search" class="form-control input-sm" placeholder="" aria-controls="flowWithInfo"></label></div></div></div><div class="row"><div class="col-sm-12"><table id="flowWithInfo" class="table table-fixed table-striped table-bordered table-hover dataTable no-footer dtr-inline" style="width: 100%;" role="grid" aria-describedby="flowWithInfo_info">
-              <thead class="bg-info">
-              <tr role="row"><th style="width: 95.2px;" class="all sorting_asc" rowspan="1" colspan="1" aria-label="شماره درخواست">شماره درخواست</th><th style="width: 73.2px;" class="sorting" tabindex="0" aria-controls="flowWithInfo" rowspan="1" colspan="1" aria-label="تاریخ ایجاد: نمایش به صورت صعودی">تاریخ ایجاد</th><th style="width: 75.2px;" class="sorting" tabindex="0" aria-controls="flowWithInfo" rowspan="1" colspan="1" aria-label="ایجادکننده: نمایش به صورت صعودی">ایجادکننده</th><th style="width: 149.2px;" class="sorting_disabled" rowspan="1" colspan="1" aria-label="تاریخ ارجاع">تاریخ ارجاع</th><th style="width: 155.2px;" class="sorting" tabindex="0" aria-controls="flowWithInfo" rowspan="1" colspan="1" aria-label="ارجاع دهنده: نمایش به صورت صعودی">ارجاع دهنده</th><th style="width: 155.2px;" class="sorting" tabindex="0" aria-controls="flowWithInfo" rowspan="1" colspan="1" aria-label="اخذ کننده: نمایش به صورت صعودی">اخذ کننده</th><th style="width: 640.2px;" class="white-space-normal sorting" tabindex="0" aria-controls="flowWithInfo" rowspan="1" colspan="1" aria-label=" توضیحات: نمایش به صورت صعودی"> توضیحات</th><th style="width: 51.2px;" class="modal-datatable sorting_disabled" rowspan="1" colspan="1" aria-label="مشاهده">مشاهده</th></tr>
+<!--        /////////table-->
+
+          <div style="margin-top: 30px;padding: 25px;border: 1px solid black;margin: 10px;border-radius: 10px;">
+            <!--begin::Table-->
+            <table class="align-middle fs-6 gy-5 table table-striped table-bordered table-sm row-border hover" datatable [dtOptions]="dtOptions"
+                   [dtTrigger]="dtTrigger">
+              <!--begin::Table head-->
+              <thead style="background-color: #d9edf7;">
+              <tr>
+                <th  style="background-color: #67809f!important;width: 100%;border-left-width: 1px;text-align: right !important;padding-right: 15px;color: #fff;" colspan="12" rowspan="1">
+                  درخواست‌های فعال
+                </th>
+              </tr>
+
+
+
+
+
+              <!--begin::Table row-->
+              <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                <th style="width:44px;">شماره درخواست</th>
+                <th>تاریخ ایجاد</th>
+                <th>ایجاد کننده</th>
+                <th>تاریخ ارجاع</th>
+                <th>ارجاع دهنده</th>
+                <th>اخذ کننده</th>
+                <th>توضیحات</th>
+                <th>مشاهده</th>
+              </tr>
+              <!--end::Table row-->
               </thead>
-              <tbody><tr class="odd"><td valign="top" colspan="8" class="dataTables_empty">هیچ رکوردی وجود ندارد</td></tr></tbody>
-            </table><div id="flowWithInfo_processing" class="dataTables_processing panel panel-default" style="display: none;">در حال پردازش...</div></div></div><div class="row"><div class="col-sm-5"><div class="dataTables_info" id="flowWithInfo_info" role="status" aria-live="polite">نمایش 0 تا 0 از 0 ردیف</div></div><div class="col-sm-7"><div class="dataTables_paginate paging_input" id="flowWithInfo_paginate" style="display: none;"><span class="previous paginate_button" id="flowWithInfo_previous">قبلی</span><span>صفحه </span><input class="paginate_input" type="text"><span> از </span><span class="paginate_total"></span><span></span><span class="next paginate_button" id="flowWithInfo_next">بعدی</span></div></div></div></div>
+              <!--end::Table head-->
+              <!--begin::Table body-->
+              <tbody class="fw-semibold text-gray-600">
+
+
+              <!--begin::Table row-->
+              <tr *ngFor="let item of newData;let i = index">
+                <!--begin::محصولات=-->
+                <td>
+                  <div style="text-align: right;margin-right: 10px;">
+                    {{item.shomareDarkhast}}
+                  </div>
+                </td>
+                <!--end::محصولات=-->
+                <!--begin::SKU=-->
+                <td class="text-end pe-0">
+                  <span class="fw-bold">{{item.shahr}}</span>
+                </td>
+                <!--end::SKU=-->
+                <!--begin::rating-->
+                <td class="text-end pe-0" data-order="rating-4" data-filter="rating-4">
+                  {{item.noeDarkhast}}
+                </td>
+                <!--end::rating-->
+
+
+                <!--begin::rating-->
+                <td class="text-end pe-0" data-order="rating-4" data-filter="rating-4">
+                  {{item.marhale}}
+                </td>
+                <!--end::rating-->
+
+
+                <!--begin::rating-->
+                <td class="text-end pe-0" data-order="rating-4" data-filter="rating-4">
+                  {{item.ijadKonande}}
+                </td>
+                <!--end::rating-->
+
+
+                <!--begin::rating-->
+                <td class="text-end pe-0" data-order="rating-4" data-filter="rating-4">
+                  {{item.erjaDahande}}
+                </td>
+                <!--end::rating-->
+
+
+                <!--begin::rating-->
+                <td class="text-end pe-0" data-order="rating-4" data-filter="rating-4">
+                  {{item.tarikhErja}}
+                </td>
+                <!--end::rating-->
+
+
+                <!--begin::rating-->
+                <td class="text-end pe-0" data-order="rating-4" data-filter="rating-4">
+                  {{item.khande}}
+                </td>
+
+              </tr>
+              <!--end::Table row-->
+
+
+              </tbody>
+              <!--end::Table body-->
+            </table>
+            <!--end::Table-->
           </div>
+
+
+
+<!--        /////////table-->
+
+
+
+
+
+
+
+
+
+
+
+
         </fieldset>
       </form>
 
