@@ -8,6 +8,7 @@ import { ListDarkhasthaieFaalBaEtelaatBishtarComponent } from './list-darkhastha
 import {ListDarkhasthaieFaalMainComponent} from "./list-darkhasthaie-faal-main/list-darkhasthaie-faal-main.component";
 import {DropdownModule} from "primeng/dropdown";
 import {FormsModule} from "@angular/forms";
+import {StatusReadResolve} from "./shared/statusReadResolve/statusReadResolve";
 
 
 @NgModule({
@@ -19,6 +20,9 @@ import {FormsModule} from "@angular/forms";
     exports: [
 
     ],
+  providers:[
+
+  ],
   imports: [
     CommonModule,
     ListDarkhasthaieFaalRoutingModule,

@@ -1,8 +1,17 @@
-import {Component, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
+import {
+  AfterContentChecked, AfterContentInit,
+  AfterViewChecked,
+  AfterViewInit,
+  Component, DoCheck,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  SimpleChanges
+} from '@angular/core';
 import {
   ActivatedRoute,
   ActivatedRouteSnapshot,
-  ActivationStart,
+  ActivationStart, Data,
   NavigationEnd,
   Router,
   RoutesRecognized
@@ -18,7 +27,7 @@ import {IroidadHa} from "../shared/interFace/IroidadHa";
   templateUrl: './list-darkhasthaie-faal.component.html',
   styleUrls: ['./list-darkhasthaie-faal.component.css']
 })
-export class ListDarkhasthaieFaalComponent implements OnInit, OnDestroy {
+export class ListDarkhasthaieFaalComponent implements OnInit, OnDestroy,AfterViewChecked,AfterViewInit,AfterContentChecked,AfterContentInit,DoCheck,OnChanges{
 
   id: string = '';
   status:any;
@@ -34,30 +43,37 @@ export class ListDarkhasthaieFaalComponent implements OnInit, OnDestroy {
   subs: Array<Subscription> = [];
   constructor(private activatedRoute: ActivatedRoute,private router: Router) {
 
-    this.subs[0] = this.router.events
-      .pipe(
-        filter(event => event instanceof NavigationEnd),
-        map(() => this.activatedRoute.snapshot),
-        map(route => {
-          console.log('this.activatedRoute.snapshot =>',this.activatedRoute.snapshot);
-          while (route.firstChild) {
-            route = route.firstChild;
-          }
-          return route;
-        })
-      ).subscribe((route: ActivatedRouteSnapshot) => {
-        this.status=route.data['status'];
-        if(this.status){
-          this.status=route.data['status'];
-        }else {
-          debugger;
-          this.status='';
-        }
-        console.log('fff=>',this.status);
-      });
+    // this.subs[0] = this.router.events
+    //   .pipe(
+    //     filter(event => event instanceof NavigationEnd),
+    //     map(() => this.activatedRoute.snapshot),
+    //     map(route => {
+    //       while (route.firstChild) {
+    //         route = route.firstChild;
+    //       }
+    //       return route;
+    //     })
+    //   ).subscribe((route: ActivatedRouteSnapshot) => {
+    //     this.status=route.data['status'];
+    //     if(!this.status){
+    //       debugger;
+    //       this.status='';
+    //     }
+    //     console.log('fff=>',this.status);
+    //   });
+
   }
 
   ngOnInit(): void {
+
+    this.activatedRoute.data.subscribe(
+      (data:Data)=>{
+        this.status=data['status']
+      }
+    )
+
+
+
     this.dtOptions = {
       pagingType: 'full_numbers',
       pageLength: 10,
@@ -640,5 +656,28 @@ export class ListDarkhasthaieFaalComponent implements OnInit, OnDestroy {
     // Do not forget to unsubscribe the event
     this.dtTrigger.unsubscribe();
   }
-
+  ngOnChanges() {
+    console.log('ngOnChanges Called!')
+    console.log('fff=>',this.status);
+  }
+  ngDoCheck(){
+    console.log('ngDoCheck Called!')
+    console.log('fff=>',this.status);
+  }
+  ngAfterContentInit(){
+    console.log('ngAfterContentInit Called!')
+    console.log('fff=>',this.status);
+  }
+  ngAfterContentChecked(){
+    console.log('ngAfterContentChecked Called!')
+    console.log('fff=>',this.status);
+  }
+  ngAfterViewInit(){
+    console.log('ngAfterViewInit Called!')
+    console.log('fff=>',this.status);
+  }
+  ngAfterViewChecked(){
+    console.log(' ngAfterViewChecked Called!')
+    console.log('fff=>',this.status);
+  }
 }

@@ -5,15 +5,17 @@ import {
   ListDarkhasthaieFaalBaEtelaatBishtarComponent
 } from "./list-darkhasthaie-faal-ba-etelaat-bishtar/list-darkhasthaie-faal-ba-etelaat-bishtar.component";
 import {ListDarkhasthaieFaalMainComponent} from "./list-darkhasthaie-faal-main/list-darkhasthaie-faal-main.component";
+import {StatusReadResolve} from "./shared/statusReadResolve/statusReadResolve";
 
 
 const routes: Routes = [
   {path:'',component:ListDarkhasthaieFaalMainComponent,
     children:[
-      {path:'InboxIsArchive',component:ListDarkhasthaieFaalComponent,data: { status: 'آرشیو شده' }},
+      {path:'InboxIsArchive/:item',component:ListDarkhasthaieFaalComponent,resolve:{status: StatusReadResolve}},
       {path:'Inbox/:id',component:ListDarkhasthaieFaalComponent},
       {path:'Inbox',component:ListDarkhasthaieFaalComponent},
-      {path:'InboxIsRead',component:ListDarkhasthaieFaalComponent,data: { status: 'خوانده شده' }},
+      {path:'InboxIsRead/:item',component:ListDarkhasthaieFaalComponent,resolve:{status: StatusReadResolve}},
+      {path:'InboxNotRead/:item',component:ListDarkhasthaieFaalComponent,resolve:{status: StatusReadResolve}},
       {path:'inboxwithinfo',component:ListDarkhasthaieFaalBaEtelaatBishtarComponent},
     ]}
 ];

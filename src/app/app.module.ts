@@ -17,6 +17,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import { BrowserModule } from '@angular/platform-browser'
 import {FormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {StatusReadResolve} from "./list-darkhasthaie-faal/shared/statusReadResolve/statusReadResolve";
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     BrowserAnimationsModule
   ],
   providers: [
+    StatusReadResolve,
     SidebarService,
     {
       provide:HTTP_INTERCEPTORS,
