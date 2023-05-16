@@ -27,52 +27,34 @@ import {IroidadHa} from "../shared/interFace/IroidadHa";
   templateUrl: './list-darkhasthaie-faal.component.html',
   styleUrls: ['./list-darkhasthaie-faal.component.css']
 })
-export class ListDarkhasthaieFaalComponent implements OnInit, OnDestroy,AfterViewChecked,AfterViewInit,AfterContentChecked,AfterContentInit,DoCheck,OnChanges{
+export class ListDarkhasthaieFaalComponent implements OnInit, OnDestroy{
 
-  id: string = '';
-  status:any;
+
   dataTotal: IlistDarkhasthaieFaal[] = [];
   data: IlistDarkhasthaieFaal[] = [];
   newData: IlistDarkhasthaieFaal[] = [];
   dataMoshahedeSabeghe: ImoshahedeSabeghe[] = [];
   roidadHa: IroidadHa[] = [];
-
   dtOptions: DataTables.Settings = {};
   // thus we ensure the data is fetched before rendering
   dtTrigger: Subject<any> = new Subject<any>();
   subs: Array<Subscription> = [];
+
+  id: string = '';
+  status:any;
+  private statusSub:any;
+
   constructor(private activatedRoute: ActivatedRoute,private router: Router) {
-
-    // this.subs[0] = this.router.events
-    //   .pipe(
-    //     filter(event => event instanceof NavigationEnd),
-    //     map(() => this.activatedRoute.snapshot),
-    //     map(route => {
-    //       while (route.firstChild) {
-    //         route = route.firstChild;
-    //       }
-    //       return route;
-    //     })
-    //   ).subscribe((route: ActivatedRouteSnapshot) => {
-    //     this.status=route.data['status'];
-    //     if(!this.status){
-    //       debugger;
-    //       this.status='';
-    //     }
-    //     console.log('fff=>',this.status);
-    //   });
-
   }
 
   ngOnInit(): void {
 
-    this.activatedRoute.data.subscribe(
+    // @ts-ignore
+    this.statusSub=this.activatedRoute.data.subscribe(
       (data:Data)=>{
         this.status=data['status']
       }
     )
-
-
 
     this.dtOptions = {
       pagingType: 'full_numbers',
@@ -655,29 +637,6 @@ export class ListDarkhasthaieFaalComponent implements OnInit, OnDestroy,AfterVie
   ngOnDestroy(): void {
     // Do not forget to unsubscribe the event
     this.dtTrigger.unsubscribe();
-  }
-  ngOnChanges() {
-    console.log('ngOnChanges Called!')
-    console.log('fff=>',this.status);
-  }
-  ngDoCheck(){
-    console.log('ngDoCheck Called!')
-    console.log('fff=>',this.status);
-  }
-  ngAfterContentInit(){
-    console.log('ngAfterContentInit Called!')
-    console.log('fff=>',this.status);
-  }
-  ngAfterContentChecked(){
-    console.log('ngAfterContentChecked Called!')
-    console.log('fff=>',this.status);
-  }
-  ngAfterViewInit(){
-    console.log('ngAfterViewInit Called!')
-    console.log('fff=>',this.status);
-  }
-  ngAfterViewChecked(){
-    console.log(' ngAfterViewChecked Called!')
-    console.log('fff=>',this.status);
+    this.statusSub.unsubscribe();
   }
 }
