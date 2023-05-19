@@ -6,6 +6,7 @@ import {
 } from "./list-darkhasthaie-faal-ba-etelaat-bishtar/list-darkhasthaie-faal-ba-etelaat-bishtar.component";
 import {ListDarkhasthaieFaalMainComponent} from "./list-darkhasthaie-faal-main/list-darkhasthaie-faal-main.component";
 import {StatusReadResolve} from "./shared/statusReadResolve/statusReadResolve";
+import {ForSearchComponent} from "./for-search/for-search.component";
 
 
 const routes: Routes = [
@@ -15,7 +16,10 @@ const routes: Routes = [
       {path:'Inbox/:id',component:ListDarkhasthaieFaalComponent},
       {path:'Inbox',component:ListDarkhasthaieFaalComponent},
       {path:'InboxIsRead/:item',component:ListDarkhasthaieFaalComponent,resolve:{status: StatusReadResolve}},
-      {path:'InboxNotRead/:item',component:ListDarkhasthaieFaalComponent,resolve:{status: StatusReadResolve}},
+      {path:'InboxIsGetMe/:item',component:ListDarkhasthaieFaalComponent,resolve:{status: StatusReadResolve}},
+      {path:'IsGetOther/:item',component:ListDarkhasthaieFaalComponent,resolve:{status: StatusReadResolve}},
+      {path:'NotGet/:item',component:ListDarkhasthaieFaalComponent,resolve:{status: StatusReadResolve}},
+      {path:'forSearch/:item',component:ForSearchComponent,resolve:{status: StatusReadResolve}},
       {path:'inboxwithinfo',component:ListDarkhasthaieFaalBaEtelaatBishtarComponent},
     ]}
 ];

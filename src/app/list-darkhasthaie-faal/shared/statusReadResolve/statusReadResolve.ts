@@ -24,6 +24,21 @@ export class StatusReadResolve implements Resolve<IstatusRead>{
         // @ts-ignore
         return 'آرشیو شده';
         break;
+        case '4':
+        // @ts-ignore
+        return 'گرفته شده توسط من';
+        break;case '5':
+        // @ts-ignore
+        return 'گرفته شده توسط دیگران';
+        break;
+        break;case '6':
+        // @ts-ignore
+        return 'گرفته نشده';
+        break;
+        break;case '7':
+        // @ts-ignore
+        return 'جستجوی درخواست';
+        break;
       default:
         // @ts-ignore
         return '';

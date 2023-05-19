@@ -9,13 +9,15 @@ import {ListDarkhasthaieFaalMainComponent} from "./list-darkhasthaie-faal-main/l
 import {DropdownModule} from "primeng/dropdown";
 import {FormsModule} from "@angular/forms";
 import {StatusReadResolve} from "./shared/statusReadResolve/statusReadResolve";
+import { ForSearchComponent } from './for-search/for-search.component';
 
 
 @NgModule({
     declarations: [
         ListDarkhasthaieFaalComponent,
         ListDarkhasthaieFaalBaEtelaatBishtarComponent,
-        ListDarkhasthaieFaalMainComponent
+        ListDarkhasthaieFaalMainComponent,
+        ForSearchComponent
     ],
     exports: [
 
