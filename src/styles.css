@@ -32,6 +32,17 @@
   padding-top: 10px !important;
   padding-bottom: 20px !important;
 }
+.modal-content{
+  top:107px !important;
+}
+.close{
+  border: none;
+  background: transparent;
+}
+a{
+  text-decoration: none;
+}
+
 
 
 

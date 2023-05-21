@@ -1,21 +1,23 @@
-<h3 style="margin-top: 30px;">اطلاعات آماری</h3>
+<div class="divAmar">
+  <h3>اطلاعات آماری</h3>
 
-<div class="tab-pane fade active show" id="kt_forms_widget_1_tab_content_1">
-  <!--begin::Input group-->
-  <div class="form-floating  rounded mb-7 divSelect">
-    <label style="font-size: 10px;position: absolute;top: -12px;right: 200px;" for="exampleDataList" class="form-label">{{changeTime}}</label>
-    <div>
-      <input (change)="changeTimeItem($event)"  onfocus="this.value=''" onchange="this.blur();" style="height: auto;"  class="form-control" list="datalistOptions" id="exampleDataList" placeholder="برای جستجو تایپ کنید..."/>
+  <div class="tab-pane fade active show" id="kt_forms_widget_1_tab_content_1">
+    <!--begin::Input group-->
+    <div class="form-floating  rounded mb-7 divSelect  mr-4">
+      <label style="font-size: 10px;position: absolute;top: -12px;right: 200px;" for="exampleDataList" class="form-label">{{changeTime}}</label>
+      <div>
+        <input (change)="changeTimeItem($event)"  onfocus="this.value=''" onchange="this.blur();" style="height: auto;"  class="form-control" list="datalistOptions" id="exampleDataList" placeholder="برای جستجو تایپ کنید..."/>
+      </div>
+      <datalist  id="datalistOptions">
+        <option value="روز گذشته">
+        <option value="ماه جاری">
+        <option value="دوره جاری">
+        <option value="سال جاری">
+        <option value="دوره قبل">
+        <option value="ماه قبل">
+        <option value="سال قبل">
+      </datalist>
     </div>
-    <datalist  id="datalistOptions">
-      <option value="روز گذشته">
-      <option value="ماه جاری">
-      <option value="دوره جاری">
-      <option value="سال جاری">
-      <option value="دوره قبل">
-      <option value="ماه قبل">
-      <option value="سال قبل">
-    </datalist>
   </div>
 </div>
 <!--end::Input group-->
