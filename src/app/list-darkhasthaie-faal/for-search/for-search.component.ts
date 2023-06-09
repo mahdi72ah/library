@@ -6,6 +6,10 @@ import {Subject, Subscription} from "rxjs";
 import {ActivatedRoute, Data, Router} from "@angular/router";
 import {LanguageApp} from "../../dashboard/shared/class/LanguageApp";
 import {NgbModal,ModalDismissReasons} from "@ng-bootstrap/ng-bootstrap";
+import { TabsetComponent } from 'ngx-bootstrap/tabs';
+import {TreeNode} from "primeng/api";
+import {NodeService} from "../shared/services/node.service";
+
 
 @Component({
   selector: 'app-for-search',
@@ -13,25 +17,27 @@ import {NgbModal,ModalDismissReasons} from "@ng-bootstrap/ng-bootstrap";
   styleUrls: ['./for-search.component.css']
 })
 export class ForSearchComponent implements OnInit, OnDestroy, AfterViewInit{
+  @ViewChild('staticTabs', { static: false }) staticTabs?: TabsetComponent;
+  @ViewChild('mymodal') mymodal: ElementRef | undefined;
+  dtTrigger: Subject<any> = new Subject<any>();
   dataTotal: IlistDarkhasthaieFaal[] = [];
   data: IlistDarkhasthaieFaal[] = [];
   newData: IlistDarkhasthaieFaal[] = [];
   dataMoshahedeSabeghe: ImoshahedeSabeghe[] = [];
   roidadHa: IroidadHa[] = [];
   dtOptions: DataTables.Settings = {};
-  // thus we ensure the data is fetched before rendering
-  dtTrigger: Subject<any> = new Subject<any>();
   subs: Array<Subscription> = [];
   title = 'appBootstrap';
+  files: TreeNode[] | undefined;
+  selectedFiles: TreeNode[] | undefined;
 
   closeResult: string='';
-  @ViewChild('mymodal') mymodal: ElementRef | undefined;
   id: string = '';
   status:any;
   showModal:boolean=true;
   private statusSub:any;
 
-  constructor(private activatedRoute: ActivatedRoute,private router: Router,private modalService: NgbModal) {
+  constructor(private activatedRoute: ActivatedRoute,private router: Router,private modalService: NgbModal,private nodeService: NodeService) {
   }
 
   ngAfterViewInit(): void {
@@ -41,7 +47,7 @@ export class ForSearchComponent implements OnInit, OnDestroy, AfterViewInit{
 
   ngOnInit(): void {
 
-
+    this.nodeService.getFiles().then((data) => (this.files = data));
     // @ts-ignore
     this.statusSub=this.activatedRoute.data.subscribe(
       (data:Data)=>{
@@ -610,6 +616,12 @@ export class ForSearchComponent implements OnInit, OnDestroy, AfterViewInit{
     this.search(null!);
 
   } // end ngOnInit
+
+  selectTab(tabId: number) {
+    if (this.staticTabs?.tabs[tabId]) {
+      this.staticTabs.tabs[tabId].active = true;
+    }
+  }
 
   search(e: Event) {
     // @ts-ignore

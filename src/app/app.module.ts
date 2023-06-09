@@ -20,6 +20,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {StatusReadResolve} from "./list-darkhasthaie-faal/shared/statusReadResolve/statusReadResolve";
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

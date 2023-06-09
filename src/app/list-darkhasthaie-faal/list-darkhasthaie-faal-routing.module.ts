@@ -7,6 +7,10 @@ import {
 import {ListDarkhasthaieFaalMainComponent} from "./list-darkhasthaie-faal-main/list-darkhasthaie-faal-main.component";
 import {StatusReadResolve} from "./shared/statusReadResolve/statusReadResolve";
 import {ForSearchComponent} from "./for-search/for-search.component";
+import {SaierTabComponent} from "./for-search/TabComponent/saier-tab/saier-tab.component";
+import {
+  ShomareDarkhastTabComponent
+} from "./for-search/TabComponent/shomare-darkhast-tab/shomare-darkhast-tab.component";
 
 
 const routes: Routes = [
@@ -19,7 +23,10 @@ const routes: Routes = [
       {path:'InboxIsGetMe/:item',component:ListDarkhasthaieFaalComponent,resolve:{status: StatusReadResolve}},
       {path:'IsGetOther/:item',component:ListDarkhasthaieFaalComponent,resolve:{status: StatusReadResolve}},
       {path:'NotGet/:item',component:ListDarkhasthaieFaalComponent,resolve:{status: StatusReadResolve}},
-      {path:'forSearch/:item',component:ForSearchComponent,resolve:{status: StatusReadResolve}},
+      {path:'forSearch/:item',component:ForSearchComponent,resolve:{status: StatusReadResolve},children:[
+          {path:'saier',component:SaierTabComponent},
+          {path:'shomareDarkhast',component:ShomareDarkhastTabComponent}
+        ]},
       {path:'inboxwithinfo',component:ListDarkhasthaieFaalBaEtelaatBishtarComponent},
     ]}
 ];

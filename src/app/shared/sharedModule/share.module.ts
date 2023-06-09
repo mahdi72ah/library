@@ -12,7 +12,7 @@ import {TreeTableModule} from "primeng/treetable";
 import {InputTextModule} from "primeng/inputtext";
 import {CommonModule} from "@angular/common";
 import {HttpClientModule} from "@angular/common/http";
-import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+
 
 
 
@@ -46,8 +46,7 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
     DataTablesModule,
     NgImageSliderModule,
     TreeTableModule,
-    InputTextModule,
-    NgbModule
+    InputTextModule
   ]
 })
 export class ShareModule { }

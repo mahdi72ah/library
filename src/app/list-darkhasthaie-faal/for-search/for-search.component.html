@@ -11,24 +11,69 @@
   <div class="modal-body">
 
 
+    <!--    **************-->
+    <!--    **************-->
+    <!--    **************-->
+    <!--    **************-->
 
 
 
 
 
 
-    <ul class="nav nav-tabs">
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#requestNumber" aria-controls="requestNumber">شماره درخواست</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#others" aria-controls="others" role="tab" aria-expanded="false">سایر</a>
-      </li>
-    </ul>
+    <div>
+      <tabset #staticTabs>
+        <tab heading="شماره درخواست">
+          <div class="form-group mt-4">
+            <input name="RequestId" id="RequestId" class="form-control" data-form-no-save="" type="text" placeholder="شماره درخواست">
+          </div>
+        </tab>
+        <tab heading="سایر">
+
+          <div class="form-group m-2">
+            <input type="text" name="FromDate" autocomplete="off" placeholder="از تاریخ" onclick="return ShowInboxCalendar('FromDate');" id="FromDate" class="Date form-control pwt-datepicker-input-element">
+
+          </div>
+
+          <div class="form-group m-2">
+            <input type="text" name="ToDate" autocomplete="off" placeholder="تا تاریخ" onclick="return ShowInboxCalendar('ToDate');" id="ToDate" class="Date-two form-control pwt-datepicker-input-element">
+          </div>
+
+          <div class="form-group m-2">
+            <input class="form-control" placeholder="توضیحات" data-form-no-save="" type="text" name="Text" id="Describtion" style="width:100%;">
+          </div>
+
+
+          <div class="row">
+
+
+
+                  <p-tree [value]="files" selectionMode="checkbox" class="w-full md:w-30rem" [(selection)]="selectedFiles"></p-tree>
 
 
 
 
+            <div class="col-12 col-xs-12">
+              <div class="form-group m-0">
+
+                <input class="icheck m-0" id="JustReceiverForMe" name="JustReceiverForMe" type="checkbox" value="true">
+                <label for="JustReceiverForMe">فقط درخواستهایی که من ایجاد کرده ام</label>
+              </div>
+
+              <div class="form-group margin-bottom-10">
+                <label for="">وضعیت درخواست:</label>
+                <select class="form-control" id="RequestStatus" name="RequestStatus"><option value="0">همه</option>
+                  <option value="1">در دست اقدام</option>
+                  <option value="2">تمام شده</option>
+                  <option value="3">رد شده</option>
+                </select>
+              </div>
+            </div>
+
+          </div>
+        </tab>
+      </tabset>
+    </div>
 
 
 
@@ -39,12 +84,17 @@
 
 
     <div class="tab-content m--margin-bottom-25">
+
+
       <div role="tabpanel" class="tab-pane fade active in" id="requestNumber">
         <div class="form-group margin-bottom-10">
-          <!--<label for="RequestId">شماره درخواست:</label>-->
+
           <input name="RequestId" id="RequestId" class="form-control" data-form-no-save="" type="text" placeholder="شماره درخواست">
         </div>
       </div>
+
+
+
       <div role="tabpanel" class="tab-pane fade" id="others">
 
 
@@ -99,7 +149,10 @@
                   }
                 });
               </script>
-              <div id="FlowListDiv" style="background-color:transparent;max-height:250px;margin-bottom:10px;overflow:auto;border:1px;" class="jstree jstree-2 jstree-rtl jstree-default jstree-checkbox-selection" role="tree" aria-multiselectable="true" tabindex="0" aria-activedescendant="g6pTfGbIwSP5v76eRZQWXgo2ooto2oot" aria-busy="false"><ul class="jstree-container-ul jstree-children jstree-no-icons" role="group"><li role="none" id="iWuVvpeP7sLknwF9vsmokAo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="iWuVvpeP7sLknwF9vsmokAo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>صدور قبض دسته ای</a></li><li role="none" id="g6pTfGbIwSP5v76eRZQWXgo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="g6pTfGbIwSP5v76eRZQWXgo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>واگذاری انشعاب/تصحیح قرارداد</a></li><li role="none" id="GBGh9utHqlUKCGFeBTuDpQo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="GBGh9utHqlUKCGFeBTuDpQo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>تعویض کنتور</a></li><li role="none" id="45Q0zeYZO3XRUGX0jNn2rwo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="45Q0zeYZO3XRUGX0jNn2rwo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>بررسی صورتحساب</a></li><li role="none" id="me5zEEUuN4ks4HItOPdkOQo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="me5zEEUuN4ks4HItOPdkOQo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>نصب کنتور آب</a></li><li role="none" id="DFHMYV1bFmn3e42Gp5po1xrYAa12KAo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="DFHMYV1bFmn3e42Gp5po1xrYAa12KAo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>وصول مطالبات</a></li><li role="none" id="ETQxN3g1Famer2QX9M7GLQo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="ETQxN3g1Famer2QX9M7GLQo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>تغییر مشخصات</a></li><li role="none" id="AWCln9mn3e4oXv9ehsVgx4CqOQo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="AWCln9mn3e4oXv9ehsVgx4CqOQo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>صدور قبض میان دوره</a></li><li role="none" id="yKvs1ZOe3po1xrlK18Q3Q0mn3e4gOAo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="yKvs1ZOe3po1xrlK18Q3Q0mn3e4gOAo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>وصل انشعاب</a></li><li role="none" id="R5O9K2ypjd5X0bv4ZOiZcAo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="R5O9K2ypjd5X0bv4ZOiZcAo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>تغییر مکان وسایل اندازه گیری</a></li><li role="none" id="0oaNqKySXI6zTBC7c3fQ6wo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="0oaNqKySXI6zTBC7c3fQ6wo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>آزمایش کنتور</a></li><li role="none" id="nBQS5Wab7Jcmpo1xr1SwdlYJjwo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="nBQS5Wab7Jcmpo1xr1SwdlYJjwo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>قطع موقت</a></li><li role="none" id="ExoDWiO95fEeS3BUBDmn3e4kAAo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="ExoDWiO95fEeS3BUBDmn3e4kAAo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>نصب سیفون فاضلاب</a></li><li role="none" id="geyZIug6t4mW6mlFndxypwo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="geyZIug6t4mW6mlFndxypwo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>قبض دسته ای خاص</a></li><li role="none" id="7KC3mAF7Z2GMNsB2Tr9cugo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="7KC3mAF7Z2GMNsB2Tr9cugo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>جمع آوری انشعاب آب</a></li><li role="none" id="bzVnNpVepo1xr7jdq9AKyf5RTgo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="bzVnNpVepo1xr7jdq9AKyf5RTgo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>جمع آوری انشعاب فاضلاب</a></li><li role="none" id="mn3e4mfWA7tnyrC2wVweA0mn3e498Ao2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="mn3e4mfWA7tnyrC2wVweA0mn3e498Ao2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>اشتباه در نصب آب</a></li><li role="none" id="RxhFxmn3e42RRrKSGPVFsi07po1xrAo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="RxhFxmn3e42RRrKSGPVFsi07po1xrAo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>تغییر اطلاعات تعرفه</a></li><li role="none" id="jwgllBZ2tx7Qgp4YbAYQLQo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="jwgllBZ2tx7Qgp4YbAYQLQo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>اشتباه در نصب سیفون</a></li><li role="none" id="qJyBKCVW09SmDOAE1m9scAo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="qJyBKCVW09SmDOAE1m9scAo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>اشتباه در نصب فاضلاب اشتراک</a></li><li role="none" id="Zh0HNw9eTpxIYHJwSFO1yQo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="Zh0HNw9eTpxIYHJwSFO1yQo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>اشتباه در فروش فاضلاب</a></li><li role="none" id="n3tyoK43fyBfbwmHkhbLAgo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="n3tyoK43fyBfbwmHkhbLAgo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>پاسخ به استعلام</a></li><li role="none" id="7Eax1KJw8ukolcKcgc8kmn3e4wo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="7Eax1KJw8ukolcKcgc8kmn3e4wo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>جریمه تخلفات</a></li><li role="none" id="JRP65BfczP2GWwfOpo1xrvZV5go2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="JRP65BfczP2GWwfOpo1xrvZV5go2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>اشتباه در تعویض کنتور</a></li><li role="none" id="xG0OtLQbeAA6qUicqcrhzAo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="xG0OtLQbeAA6qUicqcrhzAo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>تعرفه ساخت و ساز</a></li><li role="none" id="uusakLcV2NjASmBoVr7yIgo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="uusakLcV2NjASmBoVr7yIgo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>قبوض میان دوره</a></li><li role="none" id="qJSdqoyWzw5MrwM4xiwMVQo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="qJSdqoyWzw5MrwM4xiwMVQo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>انتقاد-پیشنهاد</a></li><li role="none" id="chRBgsKIETGGdSNcIZiEVgo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="chRBgsKIETGGdSNcIZiEVgo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>رفع مشکل در نرم افزار</a></li><li role="none" id="Ua8CThCPodSSwcJU0JGpo1xrTQo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="Ua8CThCPodSSwcJU0JGpo1xrTQo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>پیشنهاد در نرم افزار</a></li><li role="none" id="Xe5X1PTYX512orpo1xrQmn3e4fVxsgo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="Xe5X1PTYX512orpo1xrQmn3e4fVxsgo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>پیگیری وصول</a></li><li role="none" id="aVYxbQ25xpo1xrpocIrzQqApo1xrSQo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="aVYxbQ25xpo1xrpocIrzQqApo1xrSQo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>تعرفه آب آزاد</a></li><li role="none" id="Ep3wXIpo1xrlx7uQhfWMKzm5nwo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="Ep3wXIpo1xrlx7uQhfWMKzm5nwo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>ثبت وصول دستی</a></li><li role="none" id="aqM4hQgVkhbmA00VqejdbAo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="aqM4hQgVkhbmA00VqejdbAo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>بازسازی انشعاب</a></li><li role="none" id="a570XFCqlbWWd6kYgUY8tgo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="a570XFCqlbWWd6kYgUY8tgo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>بررسی واحدهای عدم سکونت</a></li><li role="none" id="2po1xrfIOB4TKkzBmhIw0qGO9go2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="2po1xrfIOB4TKkzBmhIw0qGO9go2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>برگشت ودیعه ساخت و ساز</a></li><li role="none" id="3f95Z7UI2RFudt0mn3e4u4HrGgo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="3f95Z7UI2RFudt0mn3e4u4HrGgo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>هزینه کارشناسی</a></li><li role="none" id="3iBJBexZU7pZLtK38Sz5rgo2ooto2oot" class="jstree-node node jstree-leaf jstree-last"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="3iBJBexZU7pZLtK38Sz5rgo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>صدور قبض علی‌الحساب</a></li></ul></div>
+              <div id="FlowListDiv" style="background-color:transparent;max-height:250px;margin-bottom:10px;overflow:auto;border:1px;" class="jstree jstree-2 jstree-rtl jstree-default jstree-checkbox-selection" role="tree" aria-multiselectable="true" tabindex="0" aria-activedescendant="g6pTfGbIwSP5v76eRZQWXgo2ooto2oot" aria-busy="false">
+                <ul class="jstree-container-ul jstree-children jstree-no-icons" role="group">
+                  <li role="none" id="iWuVvpeP7sLknwF9vsmokAo2ooto2oot" class="jstree-node node jstree-leaf"><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor" href="#" tabindex="-1" role="treeitem" aria-selected="false" aria-level="1" id="iWuVvpeP7sLknwF9vsmokAo2ooto2oot_anchor"><i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>صدور قبض دسته ای</a></li>
+                </ul></div>
             </div>
           </div>
           <div class="col-12 col-xs-12">
