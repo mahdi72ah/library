@@ -47,27 +47,48 @@
           <div class="row">
 
 
-
+            <div class="col-6 col-md-6 FlowListDiv">
                   <p-tree [value]="files" selectionMode="checkbox" class="w-full md:w-30rem" [(selection)]="selectedFiles"></p-tree>
+            </div>
+
+            <div class="col-6 col-md-6 FlowListDiv">
+              <div class="flex justify-content-center">
+                <p-listbox [options]="cities" [(ngModel)]="selectedCities" optionLabel="name" [style]="{'width':'15rem'}"
+                           [multiple]="true" [metaKeySelection]="false"></p-listbox>
+              </div>
+            </div>
 
 
-
-
-            <div class="col-12 col-xs-12">
+            <div class="col-12 col-xs-12 mt-3">
               <div class="form-group m-0">
 
                 <input class="icheck m-0" id="JustReceiverForMe" name="JustReceiverForMe" type="checkbox" value="true">
-                <label for="JustReceiverForMe">فقط درخواستهایی که من ایجاد کرده ام</label>
+                <label for="JustReceiverForMe" style="margin-right: 10px;">فقط درخواستهایی که من ایجاد کرده ام</label>
               </div>
 
-              <div class="form-group margin-bottom-10">
-                <label for="">وضعیت درخواست:</label>
-                <select class="form-control" id="RequestStatus" name="RequestStatus"><option value="0">همه</option>
-                  <option value="1">در دست اقدام</option>
-                  <option value="2">تمام شده</option>
-                  <option value="3">رد شده</option>
-                </select>
+
+              <div class="row fv-row mb-7">
+                <label class="mb-2" for="">وضعیت درخواست:</label>
+                <div class="col-md-12">
+                  <div class="w-100">
+                    <!--begin::انتخاب2-->
+                    <select style="background-position:left 1rem center;" class="form-select form-select-solid"
+                            name="layout" data-control="select2" data-hide-search="true"
+                            data-placeholder="انتخاب a layout">
+                      <option value="پیش فرض" selected="selected">همه</option>
+                      <option value="الکترونیک">در دست اقدام</option>
+                      <option value="فشن">تمام شده</option>
+                      <option value="خانه">تمام شده</option>
+                      <option value="Dining">رد شده</option>
+                    </select>
+
+                    <!--end::انتخاب2-->
+                  </div>
+                </div>
               </div>
+
+
+
             </div>
 
           </div>
@@ -191,8 +212,9 @@
 
 
   </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+  <div class="modal-footer" style="direction: ltr;">
+    <button type="button" class="btn btn-secondary float-start" (click)="modal.close('Save click')">خروج</button>
+    <button type="button" class="btn btn-primary float-end" (click)="modal.close('Save click')">جستجو</button>
   </div>
 </ng-template>
 

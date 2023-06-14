@@ -45,7 +45,12 @@ a{
 .p-tree .p-treenode-children {
   padding: 0 1rem 0 0!important;
 }
-
+.p-tree{
+  border: none !important;
+}
+.p-listbox{
+  border: none !important;
+}
 
 
 

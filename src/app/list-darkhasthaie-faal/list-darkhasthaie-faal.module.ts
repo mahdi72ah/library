@@ -15,6 +15,8 @@ import {TabsModule} from "ngx-bootstrap/tabs";
 import { TreeModule } from 'primeng/tree';
 import { TreeSelectModule } from 'primeng/treeselect';
 import { TreeTableModule } from 'primeng/treetable';
+import {ListboxModule} from "primeng/listbox";
+import {NgbDropdownModule} from "@ng-bootstrap/ng-bootstrap";
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import { TreeTableModule } from 'primeng/treetable';
     TabsModule,
     TreeModule,
     TreeSelectModule,
-    TreeTableModule
+    TreeTableModule,
+    ListboxModule,
+    NgbDropdownModule
   ]
 })
 export class ListDarkhasthaieFaalModule {

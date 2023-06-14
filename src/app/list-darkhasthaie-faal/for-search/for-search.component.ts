@@ -10,6 +10,10 @@ import { TabsetComponent } from 'ngx-bootstrap/tabs';
 import {TreeNode} from "primeng/api";
 import {NodeService} from "../shared/services/node.service";
 
+interface City {
+  name: string,
+  code: string
+}
 
 @Component({
   selector: 'app-for-search',
@@ -30,6 +34,8 @@ export class ForSearchComponent implements OnInit, OnDestroy, AfterViewInit{
   title = 'appBootstrap';
   files: TreeNode[] | undefined;
   selectedFiles: TreeNode[] | undefined;
+  cities: City[] | undefined;
+  selectedCities: City[] | undefined;
 
   closeResult: string='';
   id: string = '';
@@ -46,6 +52,34 @@ export class ForSearchComponent implements OnInit, OnDestroy, AfterViewInit{
 
 
   ngOnInit(): void {
+
+    this.cities = [
+      { name: 'New York', code: 'NY' },
+      { name: 'Rome', code: 'RM' },
+      { name: 'London', code: 'LDN' },
+      { name: 'Istanbul', code: 'IST' },
+      { name: 'Paris', code: 'PRS' },   { name: 'New York', code: 'NY' },
+      { name: 'Rome', code: 'RM' },
+      { name: 'London', code: 'LDN' },
+      { name: 'Istanbul', code: 'IST' },
+      { name: 'Paris', code: 'PRS' },   { name: 'New York', code: 'NY' },
+      { name: 'Rome', code: 'RM' },
+      { name: 'London', code: 'LDN' },
+      { name: 'Istanbul', code: 'IST' },
+      { name: 'Paris', code: 'PRS' },   { name: 'New York', code: 'NY' },
+      { name: 'Rome', code: 'RM' },
+      { name: 'London', code: 'LDN' },
+      { name: 'Istanbul', code: 'IST' },
+      { name: 'Paris', code: 'PRS' },   { name: 'New York', code: 'NY' },
+      { name: 'Rome', code: 'RM' },
+      { name: 'London', code: 'LDN' },
+      { name: 'Istanbul', code: 'IST' },
+      { name: 'Paris', code: 'PRS' },   { name: 'New York', code: 'NY' },
+      { name: 'Rome', code: 'RM' },
+      { name: 'London', code: 'LDN' },
+      { name: 'Istanbul', code: 'IST' },
+      { name: 'Paris', code: 'PRS' }
+    ];
 
     this.nodeService.getFiles().then((data) => (this.files = data));
     // @ts-ignore

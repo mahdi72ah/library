@@ -5,7 +5,13 @@
 h3, h4 {
   color: #e87e04!important;
 }
-
+.FlowListDiv{
+  background-color: transparent;
+  max-height: 250px;
+  margin-bottom: 10px;
+  overflow: auto;
+  border: 1px;
+}
 
 
 
